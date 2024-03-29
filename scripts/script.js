@@ -36,9 +36,96 @@ function updateSlider() {
 // Инициализация слайдера
 updateSlider();
 
+
+
+
+
+
+
+const ButtonPrev = document.querySelector('.js-button-prev');
+const ButtonNext = document.querySelector('.js-button-next');
+
+let notHiddenCard = 1;
+let VisualCard = document.querySelectorAll('.doctors__card');
+let maxLenthCards = VisualCard.length;
+let VisualHiddenCard = document.querySelectorAll(`.doctors__card:not(:nth-child(${notHiddenCard}))`);
+let lengthKillCard = maxLenthCards -1;
+let lengthRecoveryCards = maxLenthCards ;
+function KillCard(VisualHiddenCard) {
+  for (let i = 0; i < lengthKillCard; i++) {
+    VisualHiddenCard[i].className += ' visually-hidden';
+  }
+}
+
+function RecoveryCard(VisualCard) {
+  for (let i = 0; i < lengthRecoveryCards; i++) {
+    if (VisualCard[i].classList.contains('visually-hidden')) {
+      VisualCard[i].classList.remove('visually-hidden');
+    };
+  }
+}
+
+KillCard(VisualHiddenCard);
+// console.log(VisualHiddenCard);
+// KillCard();
+
+ButtonPrev.addEventListener('click', function(){
+  console.log("prev");
+  notHiddenCard -= 1;
+  if (notHiddenCard < 1) {
+    notHiddenCard = maxLenthCards;
+  }
+  RecoveryCard(VisualCard)
+  let VisualHiddenCard = document.querySelectorAll(`.doctors__card:not(:nth-child(${notHiddenCard}))`);
+  KillCard(VisualHiddenCard);
+  const currentElement = $(".bottom-slider__wrapper").find(
+    ".js-slide-item:first-child"
+  );
+  const parentElement = $(".bottom-slider__wrapper");
+  parentElement.append(currentElement);
+  $(".primavera__team-description").animate({ opacity: 0 }, 100);
+  $(".primavera__team-description").animate({ opacity: 1 }, 1000);
+  $(".primavera_team-description .primaverateam-caption").html(
+    $(".primaverateam-images")
+      .find(".primaverateam-item:last-child")
+      .find(".primavera_team-caption")
+      .html()
+      );
+})
+
+ButtonNext.addEventListener('click', function(){
+  console.log("next");
+  notHiddenCard += 1;
+  if (notHiddenCard > maxLenthCards) {
+    notHiddenCard = 1;
+  }
+  RecoveryCard(VisualCard);
+  let VisualHiddenCard = document.querySelectorAll(`.doctors__card:not(:nth-child(${notHiddenCard}))`);
+  KillCard(VisualHiddenCard);
+
+    const currentElement = $(".bottom-slider__wrapper").find(
+      ".js-slide-item:last-child"
+    );
+    const parentElement = $(".bottom-slider__wrapper");
+    parentElement.prepend(currentElement);
+    $(".primavera__team-description").animate({ opacity: 0 }, 100);
+  $(".primavera__team-description").animate({ opacity: 1 }, 1000);
+  $(".primavera_team-description .primaverateam-caption").html(
+    $(".primaverateam-images")
+      .find(".primaverateam-item:last-child")
+      .find(".primavera_team-caption")
+      .html()
+      );
+})
+
+
+
+
+
+
 /* Обработчик для слайдера команды */
 $(".js-bottom-slider").on("click", function () {
-  if ($(this).hasClass("js-button-prev")) {
+  if ($(this).hasClass(".js-button-prev")) {
     console.log("prev");
     const currentElement = $(".bottom-slider__wrapper").find(
       ".js-slide-item:first-child"
@@ -46,7 +133,7 @@ $(".js-bottom-slider").on("click", function () {
     const parentElement = $(".bottom-slider__wrapper");
     parentElement.append(currentElement);
   }
-  if ($(this).hasClass("js-button-next")) {
+  if ($(this).hasClass(".js-button-next")) {
     console.log("next");
     const currentElement = $(".bottom-slider__wrapper").find(
       ".js-slide-item:last-child"

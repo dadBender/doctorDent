@@ -530,17 +530,20 @@
 .bottom-slider__slide:nth-child(3) {
   background-color: green;
 } */
-
+.js-bottom-slider {
+  position: relative;
+}
 .bottom-slider__wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
+  display: flex;
   position: relative;
 }
 
-.js-slide-item:nth-child(1) {
-  margin-top: 184px;
-  margin-right: -221px;
+.bottom-slider__button-next, .bottom-slider__button-prev {
+  z-index: 2;
+}
+
+.js-slide-item:nth-child( n + 4 ) {
+  display: none;
 
 }
 .js-slide-item:nth-child(2) {
@@ -549,8 +552,9 @@
 
 
 }
-.js-slide-item:nth-child(3) {
-  margin-top: 0px;
+.js-slide-item:nth-child(1) {
+  margin-top: 184px;
+  margin-right: -221px;
 
 }
 
