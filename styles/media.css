@@ -1,6 +1,51 @@
+@media (width < 1400px) {
+  
+  .reviews__text {
+    padding-block: 0px 8px;
+  }
+}
+@media (width < 1218px) {
+  .sale__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 200px);
+    column-gap: 20px;
+    row-gap: 6px;
+  }
+  .price__therapy {
+    bottom: 35px;
+  }
+  .sale__installation__implant {
+    grid-column: 2/3;
+    grid-row: 1/4;
+  }
+
+  .sale__therapy {
+    grid-row: 4/5;
+    grid-column: 1/3;
+  }
+}
+
 @media (width < 1160px) {
   .telephone__header p {
     display: none;
+  }
+  .contact {
+    flex-direction: column;
+    padding: 0px;
+  }
+  .contact__container {
+    padding-inline: var(--ears);    
+  }
+  .contact__list {
+    max-width: none;
+    width: 100%;
+  }
+  .geo__link::before {
+    width: 28px;
+  }
+  .cards__contacts {
+    height: 290px;
   }
 }
 
@@ -60,20 +105,88 @@
   }
 
   .burger-checkbox:checked + .burger::before {
-    top: 11px;
+    content: "";
+    top: 22px;
     transform: rotate(45deg);
-    box-shadow: 0 6px 0 var(--main-color);
+    box-shadow: 0 6px 0 transparent;
     transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
     bottom: 11px;
-    display: none;
     background: var(--main-color);
+    z-index: 3;
   }
 
   .burger-checkbox:checked + .burger::after {
+
     transform: rotate(-45deg);
     transition: bottom 0.3s, transform 0.3s 0.15s;
     background: var(--main-color);
   }
+
+
+
+
+
+  .burger-checkbox__footer {
+    position: absolute;
+    visibility: hidden;
+    display: none;
+  }
+
+  .burger__footer {
+    cursor: pointer;
+    /* display: none; */
+    position: relative;
+    border: none;
+    background: transparent;
+    width: 40px;
+    height: 26px;
+    z-index: 10;
+    transform: scale(0.7);
+  }
+
+  .burger__footer::before,
+  .burger__footer::after {
+    content: "";
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    background: var(--main-color);
+  }
+
+  .burger__footer::before {
+    top: 0;
+    box-shadow: 0 11px 0 var(--main-color);
+    transition: box-shadow 0.3s 0.15s, top 0.3s 0.15s, transform 0.3s;
+  }
+
+  .burger__footer::after {
+    bottom: 0;
+    transition: bottom 0.3s 0.15s, transform 0.3s;
+  }
+
+  .burger-checkbox__footer:checked + .burger__footer::before {
+    content: "";
+    top: 22px;
+    transform: rotate(45deg);
+    box-shadow: 0 6px 0 transparent;
+    transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
+    bottom: 11px;
+    background: var(--main-color);
+    z-index: 3;
+  }
+
+  .burger-checkbox__footer:checked + .burger__footer::after {
+
+    transform: rotate(-45deg);
+    transition: bottom 0.3s, transform 0.3s 0.15s;
+    background: var(--main-color);
+  }
+
+
+
 
   .menu-list {
     z-index: 1;
@@ -115,6 +228,49 @@
     display: block;
   }
 
+
+  .menu-list__footer {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3px;
+    padding: 80px 0;
+    margin: 0;
+    background: var(--accent-color);
+    color: var(--main-color);
+    list-style-type: none;
+    transform: translateY(-100%);
+    display: none;
+    transition: 0.3s;
+    width: 100%;
+  }
+
+  .menu-item__footer {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .menu-item__footer:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .burger-checkbox__footer:checked ~ .menu-list__footer {
+    display: block;
+    transform: translateY(0);
+  }
+
+  .burger-checkbox__footer {
+    display: inline-block;
+  }
+
+  .burger__footer {
+    display: block;
+  }
+
   .contact__header {
     display: flex;
     justify-content: end;
@@ -151,8 +307,114 @@
     border-radius: 7px;
     padding: 2px;
   }
-}
+  .footer {
+    padding: 17px 27px 10px 27px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "burger__footer logo__dent call__footer";
+    height: 150px;
+  }
+  .navigation__footer {
+    grid-area: burger__footer;
+    align-self: center;
+  }
+  .logo__dent__footer {
+    grid-area: logo__dent;
+  }
+  .call__footer {
+    grid-area: call__footer;
+    display: block;
+    justify-self: end;
+  }
+  .footer__logo {
+    gap: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 1/4;
+    transform: translateY(
+      -36%
+    );
+  }
+  .rus__text {
+    font-size: 12px;
+  }
 
+  .logo__dent__footer-icon {
+    width: 46px;
+  }
+
+  .logo__rus__footer-image {
+    width: 47px;
+    height: 20px;
+  }
+
+}
+@media (width < 900px) {
+  .sale__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 150px);
+    column-gap: 20px;
+    row-gap: 6px;
+  }
+  .sale__therapy .title__sale {
+    width: 100%;
+  }
+  .price__therapy {
+    bottom: 15px;
+  }
+  .title__sale {
+    font-size: 14px;
+  }
+
+  .price__tomograph {
+    font-size: 14px;
+  }
+  .sale__therapy .title__sale {
+    font-size: 14px;
+  }
+  .price__implant {
+    font-size: 14px;
+  }
+  .price__tomograph {
+    font-size: 14px;
+  }
+  .sale__valute {
+    font-size: 14px;
+
+  }
+  .design__font {
+    font-size: 14px;
+
+  }
+  .sale__consultant .title__sale {
+    font-size: 14px;
+    text-align: left;
+
+  }
+  .price__consultant {
+    font-size: 14px;
+
+  }
+  .sale__installation__implant .title__sale {
+    font-size: 14px;
+
+  }
+  .sale__installation__implant-korea {
+    font-size: 14px;
+
+  }
+  .sale__therapy .title__sale {
+    font-size: 14px;
+
+  }
+  .price__therapy {
+    font-size: 14px;
+
+  }
+}
 @media (width < 700px) {
   .health__slider__card-doptext {
     display: none;
@@ -170,13 +432,23 @@
   }
   .services__card-container {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: clamp(16.625rem, 5.955vw + 15.166rem, 22.313rem) clamp(
+    grid-template-rows:
+      clamp(16.625rem, 5.955vw + 15.166rem, 22.313rem) clamp(
         16.625rem,
         5.955vw + 15.166rem,
         22.313rem
-      ) clamp(16.625rem, 5.955vw + 15.166rem, 22.313rem);
+      )
+      clamp(16.625rem, 5.955vw + 15.166rem, 22.313rem);
   }
 }
 
 @media (width < 500px) {
+  .reviews__text {
+    padding: 0px;
+    font-size: 15px;
+  }
+
+  .form__input {
+    margin-inline: 26px;
+  }
 }

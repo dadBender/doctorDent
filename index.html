@@ -343,41 +343,40 @@
         <h2 class="section_title">наши врачи</h2>
         <div class="doctors__content">
           <div class="bottom-slider js-bottom-slider">
+            <button
+              class="health__prev-button bottom-slider__button-prev js-button-prev"
+              aria-label="Посмотреть предыдущий слайд"
+            >
+              <img
+                class="vector-slider"
+                src="icons/Vector_left.svg"
+                alt="стрелка влево"
+              />
+            </button>
+            <button
+              class="health__next-button bottom-slider__button-next js-button-next"
+              aria-label="Посмотреть следующий слайд"
+            >
+              <img
+                class="vector-slider"
+                src="icons/Vector_right.svg"
+                alt="стрелка вправо"
+              />
+            </button>
             <div class="bottom-slider__wrapper">
+                
               <article class="bottom-slider__slide js-slide-item">
-                <!-- <span>スライダー1（セット1）</span> -->
+                <img src="images/dentist_2.webp" alt="" class="main__slider-image">
               </article>
               <article class="bottom-slider__slide js-slide-item">
-                <!-- <span>スライダー2（セット1）</span> -->
+                <img src="./images/dentist.webp" alt="" class="main__slider-image">
+                
               </article>
               <article class="bottom-slider__slide js-slide-item">
-                <!-- <span>スライダー3（セット1）y</span> -->
+                <img src="./images/chief__doctor.webp" alt="" class="main__slider-image">
               </article>
             </div>
-            <div class="bottom-slider__button-box">
-              <button
-                class="health__prev-button bottom-slider__button-prev js-button-prev"
-                aria-label="Посмотреть предыдущий слайд"
-              >
-                <img
-                  class="vector-slider"
-                  src="icons/Vector_left.svg"
-                  alt="стрелка влево"
-                />
-              </button>
-              <button
-                class="health__next-button bottom-slider__button-next js-button-next"
-                aria-label="Посмотреть следующий слайд"
-              >
-                <img
-                  class="vector-slider"
-                  src="icons/Vector_right.svg"
-                  alt="стрелка вправо"
-                />
-              </button>
-              <!-- <div class="bottom-slider__button-prev js-button-prev"></div>
-            <div class="bottom-slider__button-next js-button-next"></div> -->
-            </div>
+            
           </div>
           <div class="doctors__content-about__block">
             <article class="doctors__card chief__doctors">
@@ -392,8 +391,18 @@
                 всегда видим!
               </p>
               <div class="doctors__qualification">
-                <button value="1" class="doctors__button doctors__button__education">Образование</button>
-                <button value="0" class="doctors__button doctors__button__specification doctors__button-none">Спецификация</button>
+                <button
+                  value="1"
+                  class="doctors__button doctors__button__education"
+                >
+                  Образование
+                </button>
+                <button
+                  value="0"
+                  class="doctors__button doctors__button__specification doctors__button-none"
+                >
+                  Спецификация
+                </button>
                 <div class="doctors__card__text">
                   <p class="education__text">
                     <span
@@ -412,17 +421,12 @@
                     >
                   </p>
                   <p class="specification__text">
+                    <span></span>
                     <span
-                      >f[[f[f[f[f[f[f[f[[f[f[f[f</span
+                      ></span
                     >
                     <span
-                      >Интернатура по специальности "Стоматология
-                      ортопедическая", Саратовский государственный медицинский
-                      университет</span
-                    >
-                    <span
-                      >Диплом по специальности "Стоматология", Саратовский
-                      государственный медицинский университет</span
+                      ></span
                     >
                   </p>
                 </div>
@@ -431,9 +435,350 @@
           </div>
         </div>
       </section>
-    </main>
 
-    <footer class="footer"></footer>
+      <!-- <section class="samples" id="samples">
+        <h2 class="section_title">работы</h2>
+        <ul class="samples__container">
+          <li class="samples__card__container">
+            <div class="samples__card">
+              <div class="samples__image">
+                <img src="images/samples__card-first_3_11zon.webp" />
+              </div>
+              <div class="samples__image samples__above">
+                <img src="images/samples__card-first-above_2_11zon.webp" />
+              </div>
+            </div>
+            <div class="samples__subtitle">
+              <p class="samples__subtitle-text">
+                Ортопед Лебедева Н. Г. <br/> Хирург Магомедов А. Т. <br/>Зубной техник Веялко Р.
+              </p>
+              <button class="samples__subtitle-button">
+                Протезирование
+              </button>
+            </div>
+          </li>
+          <li class="samples__card__container">
+            <div class="samples__card">
+              <div class="samples__image">
+                <img src="images/samples__card-second_5_11zon.webp" />
+              </div>
+              <div class="samples__image samples__above">
+                <img src="images/samples__card-second-above_4_11zon.webp" />
+              </div>
+            </div>
+            <div class="samples__subtitle">
+              <p class="samples__subtitle-text">
+                Ортопед Лебедева Н. Г. <br/> Хирург Магомедов А. <br/>Зубной техник Жайляуов Д.
+              </p>
+              <button class="samples__subtitle-button">
+                All on 4
+              </button>
+            </div>
+          </li>
+          <li class="samples__card__container">
+            <div class="samples__card">
+              <div class="samples__image">
+                <img src="images/samples__card-third_1_11zon.webp" />
+              </div>
+              <div class="samples__image samples__above">
+                <img src="images/samples__card-third-above_6_11zon.webp" />
+              </div>
+            </div>
+            <div class="samples__subtitle">
+              <p class="samples__subtitle-text">
+                Ортопед Лебедева Н. Г. <br/> Зубной техник Альтман И.
+              </p>
+              <button class="samples__subtitle-button">
+                Имплантация
+              </button>
+            </div>
+          </li>
+        </ul>
+      </section> -->
+      <section class="sale">
+        <h2 class="section_title">АКЦИИ</h2>
+        <ul class="sale__container">
+          <li class="sale-item sale__tomograph">
+            <h4 class="title__sale title__tomograph">
+              Компьютерная томография зубов
+            </h4>
+            <div class="price__tomograph">
+              1 500 <span class="sale__valute">₽</span>
+            </div>
+          </li>
+
+          <li class="sale-item sale__implant">
+            <h4 class="title__sale">
+              <span class="design__font">Имплантация</span> “Все-на-4”
+            </h4>
+            <div class="price__implant">
+              <span class="sale__frome">от </span> 99 000
+              <span class="sale__valute">₽</span>
+            </div>
+          </li>
+
+          <li class="sale-item sale__consultant">
+            <h4 class="title__sale">
+              Первичная консультация любого специалиста
+            </h4>
+            <div class="price__consultant">бесплатно</div>
+          </li>
+
+          <li class="sale-item sale__installation__implant">
+            <h4 class="title__sale">
+              Установка импланта <br />
+              <span class="sale__installation__implant-korea"
+                >(Южная Корея)</span
+              >
+            </h4>
+            <div class="price__implant">
+              30 000 <span class="sale__valute">₽</span>
+            </div>
+          </li>
+
+          <li class="sale-item sale__therapy">
+            <h4 class="title__sale">
+              Лечение пульпита молочного зуба + пломба + детская коронка
+            </h4>
+            <div class="price__therapy">
+              9 000 <span class="sale__valute">₽</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="reviews">
+        <h2 class="section_title">отзывы</h2>
+        <div class="swiper">
+          <ul class="swiper-wrapper reviews__container">
+            <li class="swiper-slide reviews__item">
+              <div class="conten__reviews">
+                <img
+                  src="./icons/quotes.svg"
+                  alt="quotes"
+                  class="reviews__quotes"
+                />
+                <p class="reviews__text">
+                  Я уже несколько лет хожу в эту клинику со всей своей семьей,
+                  мы очень довольны. Приятно иметь личного врача, который знает
+                  все ваши стоматологические проблемы и быстро их решает.
+                </p>
+              </div>
+              <p class="rewiews__name">Александр Бабыкин</p>
+            </li>
+
+            <li class="swiper-slide reviews__item">
+              <div class="conten__reviews">
+                <img
+                  src="./icons/quotes.svg"
+                  alt="quotes"
+                  class="reviews__quotes"
+                />
+                <p class="reviews__text">
+                  Я позвонил в клинику, когда сломал зуб. Врач принял меня уже
+                  через полтора часа! Зуб восстановили быстро и безболезненно,
+                  спасибо Анастасии Викторовне!
+                </p>
+              </div>
+              <p class="rewiews__name">Алексей Лавочкин</p>
+            </li>
+
+            <li class="swiper-slide reviews__item">
+              <div class="conten__reviews">
+                <img
+                  src="./icons/quotes.svg"
+                  alt="quotes"
+                  class="reviews__quotes"
+                />
+                <p class="reviews__text">
+                  Я всегда волновалась и ожидала самого худшего перед посещением
+                  стоматолога, но посещение врача в клинике прошло спокойно и
+                  безболезненно.
+                </p>
+              </div>
+              <p class="rewiews__name">Мария Сафронова</p>
+            </li>
+
+            <li class="swiper-slide reviews__item">
+              <div class="conten__reviews">
+                <img
+                  src="./icons/quotes.svg"
+                  alt="quotes"
+                  class="reviews__quotes"
+                />
+                <p class="reviews__text">
+                  Лучшая клиника в городе! Обычно я сильно напрягаюсь перед
+                  посещением стоматолога, но в этот раз это было
+                  безосновательно, врач все мне объяснил и был очень аккуратен и
+                  внимателен.
+                </p>
+              </div>
+              <p class="rewiews__name">Петр Кирьянов</p>
+            </li>
+          </ul>
+
+          <div class="swiper-button-prev sale__button_prev">
+            <img
+              class="vector-slider"
+              src="icons/Vector_left.svg"
+              alt="стрелка влево"
+            />
+          </div>
+          <div class="swiper-button-next sale__button_next">
+            <img
+              class="vector-slider"
+              src="icons/Vector_right.svg"
+              alt="стрелка вправо"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="form">
+        <h4 class="title__form">Записаться на приём</h4>
+        <p class="subtitle__form">
+          Отправьте свои контактные данные,и мы перезвоним вам для уточнения
+          всех деталей
+        </p>
+        <form action="" class="form__input">
+          <input
+            class="input__name"
+            id="GET-name"
+            type="text"
+            name="name"
+            placeholder="Ваше имя"
+          />
+          <input
+            class="input__number"
+            id="GET-number"
+            type="tel"
+            name="telephone"
+            placeholder="8 (000) 000 00 00"
+          />
+          <input type="submit" value="ОТПРАВИТЬ" class="form__button" />
+        </form>
+      </section>
+
+      <section class="contact">
+        <div class="contact__container">
+          <h2 class="section_title">контакты</h2>
+
+          <ul class="contact__list">
+            <li class="telephone__number">
+              <a
+                class="contact__link contact__link-telephone"
+                href="tel:+7(495)668-71-88"
+                >+7(495)668-71-88</a
+              >
+            </li>
+            <li class="telephone__number">
+              <a
+                class="contact__link contact__link-telephone"
+                href="tel:+7(968)570-89-52"
+                >+7(968)570-89-52</a
+              >
+            </li>
+            <li class="email__link">
+              <a
+                class="contact__link contact__link-email"
+                href="mailto:doct.dent@yandex.ru"
+                >doct.dent@yandex.ru</a
+              >
+            </li>
+            <li class="geo__link">
+              <a
+                class="contact__link contact__link-email"
+                href="https://yandex.ru/maps/-/CDRNF06G"
+                >проспект Защитников Москвы, дом 12, помещение XV</a
+              >
+            </li>
+            <li class="work__time">
+              <p class="work__time-text">Ежедневно — 10:00-21:00</p>
+            </li>
+          </ul>
+          <div class="social__link__container">
+            <a target="_blank" class="social__link" href="#">
+              <img
+                class="link__tg social__link-item"
+                src="icons/tg.svg"
+                alt="ссылка Telegramm"
+              />
+            </a>
+            <a target="_blank" class="social__link" href="https://api.whatsapp.com/send/?phone=79685708952&text&type=phone_number&app_absent=0">
+              <img
+                class="link__wp social__link-item"
+                src="icons/whatsApp.svg"
+                alt="ссылка whatsApp"
+              />
+            </a>
+            <a
+              target="_blank"
+              class="social__link"
+              href="https://vk.com/doct.dent"
+            >
+              <img
+                class="link__vk social__link-item"
+                src="icons/vk.svg"
+                alt="ссылка VK"
+              />
+            </a>
+          </div>
+        </div>
+        <div  class="cards__contacts">
+
+          <iframe
+         
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac3f32e35da6f3ef6c687fc3fa592e92f1b9c1aa91654440cffa086ab5fff11aa&amp;source=constructor"
+          width="100%"
+          height="100%"
+          frameborder="0"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="footer">
+      <nav class="navigation navigation__header navigation__footer">
+        <input
+        type="checkbox"
+        id="burger-checkbox__footer"
+        class="burger-checkbox__footer"
+        />
+        <label for="burger-checkbox__footer" class="burger__footer"></label>
+        <ul class="navigation__list menu-list__footer">
+          <li class="navigation__list-item menu-item__footer">
+            <a class="navigation__list-link" href="#"> Услуги и цены </a>
+          </li>
+          <li class="navigation__list-item menu-item__footer">
+            <a class="navigation__list-link" href="#"> Команда </a>
+          </li>
+          <li class="navigation__list-item menu-item__footer">
+            <a class="navigation__list-link" href="#"> Наши работы </a>
+          </li>
+          <li class="navigation__list-item menu-item__footer">
+            <a class="navigation__list-link" href="#"> Акции </a>
+          </li>
+          <li class="navigation__list-item menu-item__footer">
+            <a class="navigation__list-link" href="#"> Отзывы </a>
+          </li>
+          <li class="navigation__list-item menu-item__footer">
+            <a class="navigation__list-link" href="#"> Контакты </a>
+          </li>
+        </ul>
+      </nav>
+      <a href="tel:+79685708952" class="call__footer">
+        <img class="call__footer-icon" src="./icons/telephone__footer.svg">
+      </a>
+      <div class="footer__logo">
+        <div class="logo__dent__footer">
+          <img class="logo__dent__footer-icon" src="./icons/logo__footer.svg" alt="" />
+        </div>
+        <div class="logo__rus__footer">
+          <img class="logo__rus__footer-image" src="./icons/Mask group.png" alt="" />
+          <a href="https://rus2.ru/" target="_blank" class="rus__text">СОЗДАНИЕ САЙТОВ - RUS2</a>
+        </div>
+      </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="scripts/script.js"></script>

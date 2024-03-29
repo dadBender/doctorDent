@@ -1,30 +1,3 @@
-// const swiper = new Swiper(".card__swiper", {
-//   // navigation: {
-//   //   nextEl: '.reviews__button_next',
-//   //   prevEl: '.reviews__button_prev'
-//   // },
-//   // loop: true,
-
-//   breakpoints: {
-//     690: {
-//       centeredSlides: true,
-//       spaceBetween: 20,
-//       slidesPerView: "auto",
-//       pagination: {
-//         el: ".swiper-pagination",
-//         type: "bullets",
-//       },
-//       loop: true,
-//       navigation: {
-//         nextEl: ".swiper-button-next",
-//         prevEl: ".swiper-button-prev",
-//       },
-//       slidesPerGroup: 1,
-//       // slidesPerView: 1,
-//     },
-//   },
-// });
-
 // Получаем элементы слайдера
 const slider = document.querySelector(".health__slider");
 const prevButton = document.querySelector(".health__prev-button");
@@ -63,295 +36,194 @@ function updateSlider() {
 // Инициализация слайдера
 updateSlider();
 
-(function () {
-  // 即時実行関数（グローバル汚染対策）
-  let i = 0; // for文用変数の定義
-  let j = 0; // 上記内処理でfor文を使用している箇所のfor文用変数定義
-  let el = {}; // 配列・変数用（巻き上げ防止の為、冒頭にて宣言）
-
-  document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-      // 各種セレクタ・値の設定 ※アニメーションの速度などはCSS側で指定
-      el.bottomSlider = document.querySelectorAll(".js-bottom-slider"); // スライダーのセレクタを取得
-      el.slideItemElement = ".js-slide-item"; // スライドアイテムのセレクタを指定
-      el.buttonPrevElement = ".js-button-prev"; // 前へボタンのセレクタを指定
-      el.buttonNextElement = ".js-button-next"; // 次へボタンのセレクタを指定
-      el.slideAnimationClass = "is-bottom-slide"; // スライドアニメーション用のclass名を指定（下にスライドさせている箇所で使用）
-      el.xSetValue = -50; // x軸の基礎値を設定（x軸のスライド毎のずらし値）
-      el.ySetValue = 50; // y軸の基礎値を設定（y軸のスライド毎のずらし値）
-      el.unitSetValue = "px"; // x・y軸の基礎値の単位の設定（例：px、%、vw、vhなど）
-      el.arrowDisplayHideFlag = true; // 次へ・前へボタンの前と次のスライドがない場合、スライドボタンの表示・非表示をするかを指定（true：表示・非表示切り替えする、false：表示・非表示切り替えしない）
-
-      // スライダー要素があるか判定
-      if (
-        el.bottomSlider.length &&
-        document.querySelectorAll(el.slideItemElement).length &&
-        document.querySelectorAll(el.buttonPrevElement).length &&
-        document.querySelectorAll(el.buttonNextElement).length
-      ) {
-        // スライダーを初期化
-        el.bottomSlideInitializationFnc(); // スライド初期化用関数の実行
-
-        // 前へボタンのイベント処理
-        for (
-          i = 0;
-          i < document.querySelectorAll(el.buttonPrevElement).length;
-          ++i
-        ) {
-          document.querySelectorAll(el.buttonPrevElement)[i].addEventListener(
-            "click",
-            {
-              // 引数と関数をオブジェクトにして渡す
-              targetIndex: i, // 現在の該当要素が何番目かの情報を指定
-              handleEvent: el.bottomSliderPrevFnc, // 実行する関数を指定
-            },
-            false
-          );
-        }
-
-        // 次へボタンのイベント処理
-        for (
-          i = 0;
-          i < document.querySelectorAll(el.buttonNextElement).length;
-          ++i
-        ) {
-          document.querySelectorAll(el.buttonNextElement)[i].addEventListener(
-            "click",
-            {
-              // 引数と関数をオブジェクトにして渡す
-              targetIndex: i, // 現在の該当要素が何番目かの情報を指定
-              handleEvent: el.bottomSliderNextFnc, // 実行する関数を指定
-            },
-            false
-          );
-        }
-      } else {
-        return; // 現在このreturnが存在している関数の処理を値を返しつつ止める。
-      }
-    },
-    false
+/* Обработчик для слайдера команды */
+$(".js-bottom-slider").on("click", function () {
+  if ($(this).hasClass("js-button-prev")) {
+    console.log("prev");
+    const currentElement = $(".bottom-slider__wrapper").find(
+      ".js-slide-item:first-child"
+    );
+    const parentElement = $(".bottom-slider__wrapper");
+    parentElement.append(currentElement);
+  }
+  if ($(this).hasClass("js-button-next")) {
+    console.log("next");
+    const currentElement = $(".bottom-slider__wrapper").find(
+      ".js-slide-item:last-child"
+    );
+    const parentElement = $(".bottom-slider__wrapper");
+    parentElement.prepend(currentElement);
+  }
+  $(".primavera__team-description").animate({ opacity: 0 }, 100);
+  $(".primavera__team-description").animate({ opacity: 1 }, 1000);
+  $(".primavera_team-description .primaverateam-caption").html(
+    $(".primaverateam-images")
+      .find(".primaverateam-item:last-child")
+      .find(".primavera_team-caption")
+      .html()
   );
-
-  // スライド初期化用関数
-  el.bottomSlideInitializationFnc = function () {
-    for (i = 0; i < el.bottomSlider.length; ++i) {
-      el.initialSlideItem = el.bottomSlider[i].querySelectorAll(
-        el.slideItemElement
-      ); // 各スライダーの初期スライド要素を取得
-
-      el.bottomSlider[i].querySelector(
-        el.buttonPrevElement
-      ).dataset.slideCurrent = 0; // 指定したデータ属性値を設定
-      el.bottomSlider[i].querySelector(
-        el.buttonNextElement
-      ).dataset.slideCurrent = 0; // 指定したデータ属性値を設定
-
-      // 次へ・前へボタンの前と次のスライドがない場合、表示・非表示をするかの判定フラグが「true」か判定
-      if (el.arrowDisplayHideFlag) {
-        el.bottomSlider[i].querySelector(el.buttonPrevElement).style.display =
-          "none"; // 前へボタン非表示
-      }
-
-      // 該当要素数分処理
-      for (j = 0; j < el.initialSlideItem.length; ++j) {
-        // 条件を満たしているか判定
-        if (j === 0) {
-          el.xValue = 0; // x軸の初期位置の座標を指定
-          el.yValue = 0; // y軸の初期位置の座標を指定
-        } else {
-          el.xValue = el.xSetValue * j; // x軸の基礎値を調整し設定
-          el.yValue = el.ySetValue * j; // y軸の基礎値を調整し設定
-        }
-
-        el.zIndexValue = el.initialSlideItem.length - j; // z-index値の調整
-        el.cssStyles =
-          "transform: translate(" +
-          el.xValue +
-          el.unitSetValue +
-          ", " +
-          el.yValue +
-          el.unitSetValue +
-          ");" +
-          " z-index: " +
-          el.zIndexValue +
-          ";"; // style値を設定
-        el.initialSlideItem[j].style.cssText = el.cssStyles; // 指定要素にstyleを設定
-      }
-    }
-  };
-
-  // 「前へ」スライド実行用関数
-  el.bottomSliderPrevFnc = function () {
-    el.targetIndex = this.targetIndex; // 現在の該当要素が何番目かの情報を変数に格納
-    el.slideCurrent = el.bottomSlider[el.targetIndex].querySelector(
-      el.buttonPrevElement
-    ).dataset.slideCurrent; // 現在index番号を取得
-    el.slideCurrentAfter = parseInt(el.slideCurrent, 10); // 文字列を整数に変換（小数点以下を切り捨てる）
-
-    // 条件を満たしているか判定
-    if (el.slideCurrentAfter === 0) {
-      return; // 現在このreturnが存在している関数の処理を値を返しつつ止める。
-    } else {
-      el.bottomSlider[el.targetIndex].querySelector(
-        el.buttonPrevElement
-      ).dataset.slideCurrent = el.slideCurrentAfter - 1; // 指定したデータ属性値を設定
-      el.bottomSlider[el.targetIndex].querySelector(
-        el.buttonNextElement
-      ).dataset.slideCurrent = el.slideCurrentAfter - 1; // 指定したデータ属性値を設定
-      el.bottomSlider[el.targetIndex]
-        .querySelectorAll(el.slideItemElement)
-        [el.slideCurrent - 1].classList.remove(el.slideAnimationClass); // 指定要素にclassを付与
-    }
-
-    el.slideItemActive = el.bottomSlider[el.targetIndex].querySelectorAll(
-      el.slideItemElement + ":not(." + el.slideAnimationClass + ")"
-    ); // 現在表示中のセレクタを取得
-
-    el.bottomSlideFnc(el.slideItemActive, el.targetIndex); // スライド実行用関数の実行
-  };
-
-  // 「次へ」スライド実行用関数
-  el.bottomSliderNextFnc = function () {
-    el.targetIndex = this.targetIndex; // 現在の該当要素が何番目かの情報を変数に格納
-    el.slideCurrent = el.bottomSlider[el.targetIndex].querySelector(
-      el.buttonNextElement
-    ).dataset.slideCurrent; // 現在index番号を取得
-    el.slideCurrentAfter = parseInt(el.slideCurrent, 10); // 文字列を整数に変換（小数点以下を切り捨てる）
-
-    // 条件を満たしているか判定
-    if (
-      el.bottomSlider[el.targetIndex].querySelectorAll(el.slideItemElement)
-        .length ===
-      el.slideCurrentAfter + 1
-    ) {
-      return; // 現在このreturnが存在している関数の処理を値を返しつつ止める。
-    } else {
-      el.bottomSlider[el.targetIndex].querySelector(
-        el.buttonPrevElement
-      ).dataset.slideCurrent = el.slideCurrentAfter + 1; // 指定したデータ属性値を設定
-      el.bottomSlider[el.targetIndex].querySelector(
-        el.buttonNextElement
-      ).dataset.slideCurrent = el.slideCurrentAfter + 1; // 指定したデータ属性値を設定
-      el.bottomSlider[el.targetIndex]
-        .querySelectorAll(el.slideItemElement)
-        [el.slideCurrent].classList.add(el.slideAnimationClass); // 指定要素にclassを付与
-    }
-
-    el.slideItemActive = el.bottomSlider[el.targetIndex].querySelectorAll(
-      el.slideItemElement + ":not(." + el.slideAnimationClass + ")"
-    ); // 現在表示中のセレクタを取得
-
-    el.bottomSlideFnc(el.slideItemActive, el.targetIndex); // スライド実行用関数の実行
-  };
-
-  // スライド実行用関数
-  el.bottomSlideFnc = function (slideItem, targetIndex) {
-    // 次へ・前へボタンの前と次のスライドがない場合、表示・非表示をするかの判定フラグが「true」か判定
-    if (el.arrowDisplayHideFlag) {
-      // 1番目のスライダーかを判定
-      if (
-        el.bottomSlider[targetIndex].querySelectorAll(el.slideItemElement)
-          .length -
-          slideItem.length ===
-        0
-      ) {
-        el.bottomSlider[targetIndex].querySelector(
-          el.buttonPrevElement
-        ).style.display = "none"; // 前へボタン非表示
-      } else {
-        el.bottomSlider[targetIndex].querySelector(
-          el.buttonPrevElement
-        ).style.display = "block"; // 前へボタン表示
-      }
-
-      // 最後から2番目のスライダーかを判定
-      if (slideItem.length - 1 === 0) {
-        el.bottomSlider[targetIndex].querySelector(
-          el.buttonNextElement
-        ).style.display = "none"; // 次へボタン非表示
-      } else {
-        el.bottomSlider[targetIndex].querySelector(
-          el.buttonNextElement
-        ).style.display = "block"; // 次へボタン表示
-      }
-    }
-
-    // 該当要素数分処理
-    for (i = 0; i < slideItem.length; ++i) {
-      // 条件を満たしているか判定
-      if (i === 0) {
-        el.xValue = 0; // x軸の初期位置の座標を指定
-        el.yValue = 0; // y軸の初期位置の座標を指定
-      } else {
-        el.xValue = el.xSetValue * i; // x軸の基礎値を調整し設定
-        el.yValue = el.ySetValue * i; // y軸の基礎値を調整し設定
-      }
-
-      el.zIndexValue = slideItem.length - i; // z-index値の調整
-      el.cssStyles =
-        "transform: translate(" +
-        el.xValue +
-        el.unitSetValue +
-        ", " +
-        el.yValue +
-        el.unitSetValue +
-        ");" +
-        " z-index: " +
-        el.zIndexValue +
-        ";"; // style値を設定
-      slideItem[i].style.cssText = el.cssStyles; // 指定要素にstyleを設定
-    }
-  };
-})();
+});
 
 const doctorsQualif = document.querySelector(".doctors__qualification");
-const doctorsEducation = doctorsQualif.querySelector(".doctors__button__education");
-const doctorsSpecification = doctorsQualif.querySelector(".doctors__button__specification");
+const doctorsEducation = doctorsQualif.querySelector(
+  ".doctors__button__education"
+);
+const doctorsSpecification = doctorsQualif.querySelector(
+  ".doctors__button__specification"
+);
 const doctorsEducationText = doctorsQualif.querySelector(".education__text");
-const doctorsSpecificationText = doctorsQualif.querySelector(".specification__text");
+const doctorsSpecificationText = doctorsQualif.querySelector(
+  ".specification__text"
+);
 
-function doctorsHiddenText () {
-if (doctorsEducation.value === "1") {
-  doctorsSpecificationText.classList.add('visually-hidden');
-  console.log("first");
+function doctorsHiddenText() {
+  if (doctorsEducation.value === "1") {
+    doctorsSpecificationText.classList.add("visually-hidden");
+    console.log("first");
+  }
+
+  if (doctorsEducation.value === "0") {
+    doctorsSpecificationText.classList.remove("visually-hidden");
+    console.log("first");
+  }
+  if (doctorsQualif.value === "1") {
+    doctorsEducationText.classList.add("visually-hidden");
+    console.log("first");
+  }
+
+  if (doctorsQualif.value === "0") {
+    doctorsEducationText.classList.remove("visually-hidden");
+    console.log("first");
+  }
 }
+doctorsHiddenText();
 
-if (doctorsEducation.value === "0") {
-  doctorsSpecificationText.classList.remove('visually-hidden');
-  console.log("first");
-
-}
-if (doctorsQualif.value === "1") {
-  doctorsEducationText.classList.add('visually-hidden');
-  console.log("first");
-
-}
-
-if (doctorsQualif.value === "0") {
-  doctorsEducationText.classList.remove('visually-hidden');
-  console.log("first");
-
-}
-}
-doctorsHiddenText ();
-
-doctorsSpecification.addEventListener('click', function (event) {
-  doctorsSpecification.value ="1";
+doctorsSpecification.addEventListener("click", function (event) {
+  doctorsSpecification.value = "1";
   doctorsEducation.value = "0";
-  doctorsEducation.classList.add('doctors__button-none');
-  doctorsSpecification.classList.remove('doctors__button-none');
-  doctorsSpecificationText.classList.remove('visually-hidden');
-  doctorsEducationText.classList.add('visually-hidden');
-  doctorsHiddenText ();
-})
+  doctorsEducation.classList.add("doctors__button-none");
+  doctorsSpecification.classList.remove("doctors__button-none");
+  doctorsSpecificationText.classList.remove("visually-hidden");
+  doctorsEducationText.classList.add("visually-hidden");
+  doctorsHiddenText();
+});
 
-doctorsEducation.addEventListener('click', function (event) {
-  doctorsEducation.value ="1";
+doctorsEducation.addEventListener("click", function (event) {
+  doctorsEducation.value = "1";
   doctorsSpecification.value = "0";
-  doctorsSpecification.classList.add('doctors__button-none');
-  doctorsEducation.classList.remove('doctors__button-none');
-  doctorsEducationText.classList.remove('visually-hidden');
-  doctorsSpecificationText.classList.add('visually-hidden');
-  doctorsHiddenText ();
-})
+  doctorsSpecification.classList.add("doctors__button-none");
+  doctorsEducation.classList.remove("doctors__button-none");
+  doctorsEducationText.classList.remove("visually-hidden");
+  doctorsSpecificationText.classList.add("visually-hidden");
+  doctorsHiddenText();
+});
+
+function initComparisons() {
+  var x, i;
+  /*найти все элементы с классом "overlay":*/
+  x = document.getElementsByClassName("samples__above");
+  for (i = 0; i < x.length; i++) {
+    /*один раз для каждого элемента "overlay":
+передайте элемент "overlay" в качестве параметра при выполнении функции сравнения изображений:*/
+    compareImages(x[i]);
+  }
+  function compareImages(img) {
+    var slider,
+      img,
+      clicked = 0,
+      w,
+      h;
+    /*получить ширину и высоту элемента img*/
+    w = img.offsetWidth;
+    h = img.offsetHeight;
+    /*установите ширину элемента img на 50%:*/
+    img.style.width = w / 2 + "px";
+    /*создать слайдер:*/
+    slider = document.createElement("DIV");
+    slider.setAttribute("class", "samples__comparison");
+    /*вставить ползунок*/
+    img.parentElement.insertBefore(slider, img);
+    /*расположите ползунок посередине:*/
+    slider.style.top = h / 2 - slider.offsetHeight / 2 + "px";
+    slider.style.left = w / 2 - slider.offsetWidth / 2 + "px";
+    /*выполнение функции при нажатии кнопки мыши:*/
+    slider.addEventListener("mousedown", slideReady);
+    /*и еще одна функция при отпускании кнопки мыши:*/
+    window.addEventListener("mouseup", slideFinish);
+    /*или прикоснулся (для сенсорных экранов:*/
+    slider.addEventListener("touchstart", slideReady);
+    /*и выпущенный (для сенсорных экранов:*/
+    window.addEventListener("touchstop", slideFinish);
+    function slideReady(e) {
+      /*предотвратите любые другие действия, которые могут произойти при перемещении по изображению:*/
+      e.preventDefault();
+      /*теперь ползунок нажат и готов к перемещению:*/
+      clicked = 1;
+      /*выполнение функции при перемещении ползунка:*/
+      window.addEventListener("mousemove", slideMove);
+      window.addEventListener("touchmove", slideMove);
+    }
+    function slideFinish() {
+      /*ползунок больше не нажимается:*/
+      clicked = 0;
+    }
+    function slideMove(e) {
+      var pos;
+      /*если ползунок больше не нажат, выйдите из этой функции:*/
+      if (clicked == 0) return false;
+      /*получить х положения курсора :*/
+      pos = getCursorPos(e);
+      /*не допускайте расположения ползунка вне изображения:*/
+      if (pos < 0) pos = 0;
+      if (pos > w) pos = w;
+      /*выполните функцию, которая изменит размер наложенного изображения в соответствии с курсором:*/
+      slide(pos);
+    }
+    function getCursorPos(e) {
+      var a,
+        x = 0;
+      e = e || window.event;
+      /*получить x позиции изображения:*/
+      a = img.getBoundingClientRect();
+      /*вычислите координату х курсора относительно изображения:*/
+      x = e.pageX - a.left;
+      /*рассмотрим любую прокрутку страницы:*/
+      x = x - window.pageXOffset;
+      return x;
+    }
+    function slide(x) {
+      /*изменение размера изображения:*/
+      img.style.width = x + "px";
+      /*расположите ползунок:*/
+      slider.style.left = img.offsetWidth - slider.offsetWidth / 2 + "px";
+    }
+  }
+}
+initComparisons();
+
+const swiper = new Swiper(".swiper", {
+  navigation: {
+    nextEl: ".reviews__button_next",
+    prevEl: ".reviews__button_prev",
+  },
+  loop: true,
+
+  breakpoints: {
+    900: {
+      centeredSlides: true,
+      spaceBetween: 20,
+      slidesPerView: "auto",
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+      },
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      slidesPerGroup: 1,
+      // slidesPerView: 1,
+    },
+  },
+});
