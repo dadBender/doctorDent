@@ -971,8 +971,12 @@
 }
 .reviews {
   position: relative;
-  padding-inline: var(--ears);
+  
   padding-bottom: 30px;
+}
+
+.reviews .section_title {
+  padding-inline: var(--ears);
 }
 
 .reviews__container {
