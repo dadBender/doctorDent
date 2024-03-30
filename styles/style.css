@@ -693,11 +693,12 @@
 
 .samples {
   padding-inline: var(--ears);
+  position: relative;
 }
 
 .samples__container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, var(--width-samples-card));
   justify-content: center;
   gap: 30px;
 }
@@ -724,6 +725,8 @@
 .samples__image img {
   display: block;
   height: var(--height-samples-card);
+  object-fit: cover;
+
 }
 
 .samples__comparison {
@@ -784,6 +787,10 @@
   font-family: var(--main-font);
   font-size: 15px;
   font-weight: 400;
+}
+
+.works__prev-button, .works__next-button {
+  display: none;
 }
 
 .sale {

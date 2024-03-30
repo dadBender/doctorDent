@@ -1,7 +1,32 @@
+@media (width < 1800px) {
+  :root {
+    --width-samples-card: 380px;
+  --height-samples-card: 316px;
+  }
+}
+@media (width < 1600px) {
+  :root {
+    --width-samples-card: 314px;
+  --height-samples-card: 261px;
+  }
+  .samples__subtitle {
+    height: 100px;
+    flex-direction: column;
+  }
+  .samples__subtitle-text {
+    font-size: 14px;
+  }
+}
 @media (width < 1400px) {
   
   .reviews__text {
     padding-block: 0px 8px;
+  }
+}
+@media (width < 1300px) {
+  :root {
+    --width-samples-card: 261px;
+  --height-samples-card: 218px;
   }
 }
 @media (width < 1218px) {
@@ -122,10 +147,34 @@
     background: var(--main-color);
   }
 
+  .samples__container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
 
+  .works__prev-button, .works__next-button {
+    display: flex;
+    position: absolute;
+    top: 50%;
+  }
+  .works__prev-button {
+    left: clamp(0rem, 51.271vw - 12.561rem, 22.688rem);
+  }
+  .works__next-button {
+    right: clamp(0rem, 51.271vw - 12.561rem, 22.688rem);
+  }
 
-
-
+  .doctors__content {
+    display: flex;
+    flex-direction: column;
+  }
+  .bottom-slider__button-next {
+    right: 41%;
+  }
+  .bottom-slider__button-prev {
+    left: 46%;
+  }
   .burger-checkbox__footer {
     position: absolute;
     visibility: hidden;
@@ -351,6 +400,36 @@
   }
 
 }
+@media (width < 950px) {
+  .bottom-slider__wrapper {
+    justify-content: center;
+  }
+  .main__slider-image {
+    max-width: 300px;
+  }
+  .bottom-slider__button-prev, .bottom-slider__button-next {
+    top: 386px;
+
+  }
+  .bottom-slider__button-next {
+    right: 49%;
+  }
+  .bottom-slider__button-prev {
+    left: 38%;
+  }
+  .js-slide-item:nth-child(2) img, .js-slide-item:nth-child(1) img {
+    transform: scale(0.8);
+  }
+  .js-slide-item:nth-child(1) {
+    margin-top: 23px;
+    margin-right: -529px;
+  }
+  .js-slide-item:nth-child(2) {
+    margin-top: 23px;
+    margin-right: -183px;
+  }
+}
+
 @media (width < 900px) {
   .sale__container {
     display: grid;
