@@ -151,6 +151,9 @@ $(".js-bottom-slider").on("click", function () {
   );
 });
 
+
+
+
 const doctorsQualif = document.querySelector(".doctors__qualification");
 const doctorsEducation = doctorsQualif.querySelector(
   ".doctors__button__education"

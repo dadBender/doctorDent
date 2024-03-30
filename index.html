@@ -347,6 +347,8 @@
               class="health__prev-button bottom-slider__button-prev js-button-prev"
               aria-label="Посмотреть предыдущий слайд"
             >
+            <div class="overley__slider"></div>
+
               <img
                 class="vector-slider"
                 src="icons/Vector_left.svg"
@@ -357,13 +359,15 @@
               class="health__next-button bottom-slider__button-next js-button-next"
               aria-label="Посмотреть следующий слайд"
             >
-              <img
-                class="vector-slider"
-                src="icons/Vector_right.svg"
-                alt="стрелка вправо"
-              />
+            
+            <img
+            class="vector-slider"
+            src="icons/Vector_right.svg"
+            alt="стрелка вправо"
+            />
             </button>
             <div class="bottom-slider__wrapper">
+              
               <article class="bottom-slider__slide js-slide-item">
                 <img
                   src="images/dentist_2.webp"
@@ -382,6 +386,13 @@
               <article class="bottom-slider__slide js-slide-item">
                 <img
                   src="./images/chief__doctor.webp"
+                  alt=""
+                  class="main__slider-image"
+                />
+              </article>
+              <article class="bottom-slider__slide js-slide-item">
+                <img
+                  src="./images/Kasumzade.webp"
                   alt=""
                   class="main__slider-image"
                 />
@@ -463,6 +474,12 @@
                 >
                   Спецификация
                 </button>
+                <button
+                  value="0"
+                  class="doctors__button doctors__button__specification doctors__button-none"
+                >
+                Семинары
+                </button>
                 <div class="doctors__card__text">
                   <p class="education__text">
                     <span
@@ -508,6 +525,12 @@
                 >
                   Спецификация
                 </button>
+                <button
+                  value="0"
+                  class="doctors__button doctors__button__specification doctors__button-none"
+                >
+                Семинары
+                </button>
                 <div class="doctors__card__text">
                   <p class="education__text">
                     <span
@@ -518,6 +541,50 @@
                     >
                     <span>Дагестанская государственная медицинская академия</span>
                     <span>Стоматолог общей практики 2011</span>
+                  </p>
+                  <p class="specification__text">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="doctors__card chief__doctors-three">
+              <h3 class="doctors__name">Касумзаде Элина Элистановна</h3>
+              <h4 class="doctors__post">Врач-стоматолог-ортодонт</h4>
+
+              <p class="doctors__quote">
+                Я - стоматолог-ортодонтв нескольких поколениях. Исправляю не только положение зубов, но и учитываюсвязь прикуса, осанки, ВНЧС , мышц лица и спины. Поэтому в моих руках не толькокрасота лица, но и физическое, эстетическое здоровье пациентов.
+              </p>
+              <div class="doctors__qualification">
+                <button
+                  value="1"
+                  class="doctors__button doctors__button__education"
+                >
+                  Образование
+                </button>
+                <button
+                  value="0"
+                  class="doctors__button doctors__button__specification doctors__button-none"
+                >
+                  Спецификация
+                </button>
+                <button
+                  value="0"
+                  class="doctors__button doctors__button__specification doctors__button-none"
+                >
+                Семинары
+                </button>
+                <div class="doctors__card__text">
+                  <p class="education__text">
+                    <span
+                      >МГМСУ им А. И. Евдокимова, специальность Стоматология 2015 - 2020 гг.</span
+                    >
+                    <span
+                      >Ординатура : ЦГМА Управления делами Президента РФ, Специальность Ортодонтия 2020 - 2022 гг.</span
+                    >
+                    <span>Соавтор патента: « Внутриротовой окклюзионный аппарат» 2020 г</span>
                   </p>
                   <p class="specification__text">
                     <span></span>
@@ -732,7 +799,7 @@
           Отправьте свои контактные данные,и мы перезвоним вам для уточнения
           всех деталей
         </p>
-        <form action="" class="form__input">
+        <form action="mail-template.php" class="form__input">
           <input
             class="input__name"
             id="GET-name"
@@ -747,6 +814,10 @@
             name="telephone"
             placeholder="8 (000) 000 00 00"
           />
+          <div class="g-recaptcha" data-sitekey="6Lc-EakpAAAAAGKOzWlpJkKIWvzT8WF2Vpe1O5ZA"></div>
+
+
+
           <input type="submit" value="ОТПРАВИТЬ" class="form__button" />
         </form>
       </section>
@@ -883,6 +954,7 @@
         </div>
       </div>
     </footer>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="scripts/script.js"></script>
