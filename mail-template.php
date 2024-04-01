@@ -1,15 +1,15 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 // Основные данные
-define('TITLE', 'Сообщение с сайта FONAlaser sense');
-define('EMAIL', 'client@senseclinic.ru');
+define('TITLE', 'Сообщение с сайта Doctor Dent');
+define('EMAIL', 'toshechka2015@mail.ru');
 
 define('EMAIL_SEND', true);
 define('TELEGRAM_SEND', false);
 
 // API reCAPTCHA для проверки подлинности капчи
 define('RECAPTCHA_URL', 'https://www.google.com/recaptcha/api/siteverify');
-define('RECAPTCHA_KEY', '6Lc-EakpAAAAAJqWcrudDUcd-afCYDUehqp7WxB5'); //frontend: '6Lc-EakpAAAAAGKOzWlpJkKIWvzT8WF2Vpe1O5ZA'
+define('RECAPTCHA_KEY', '6Lekn6opAAAAAIl7tgz_h7MpKCCRfWmcsB0dQ_03'); //frontend: '6Lekn6opAAAAAOhqc4G9MRK_sezKJRKAvHYbvs3W'
 
 // TELEGRAM
 define('TELEGRAM_TOKEN', '6279631091:AAEzTj-zx3JmCZOtug-3nyB8MsPF7qOCcEo');
