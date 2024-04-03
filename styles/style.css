@@ -333,7 +333,7 @@
   width: 72%;
   padding: 16px 0px;
   background: linear-gradient(180deg, #2f516d 0%, #1a3d59 100%);
-  border-radius: 6px;
+  border-radius: 16px;
   margin: 0 auto;
   color: var(--main-color);
   margin-bottom: clamp(0.563rem, 0.393vw + 0.466rem, 0.938rem);
@@ -569,12 +569,40 @@
   position: relative;
   z-index: 1;
 }
+.js-slide-item:nth-child(3) {
+  z-index: 5;
+}
+.js-slide-item:nth-child(2) .dark__image__back {
+z-index: 3;
+}
 
+.js-slide-item:nth-child(2) img {
+z-index: 2;
+}
+.js-slide-item:nth-child(1) .dark__image__back {
+z-index: 1;
+}
+
+.js-slide-item:nth-child(1) img {
+z-index: 0;
+}
 .js-slide-item:nth-child(2) img, .js-slide-item:nth-child(1) img {
-  filter: blur(1px) brightness(0.5) contrast(0.5) grayscale(0.14) invert(0.04) saturate(2.1);
-  z-index: 0;
+  /* z-index: 1; */
   position: relative;
 }
+
+.image__container {
+  position: relative;
+  }
+  
+  .js-slide-item:nth-child(2) .dark__image__back, .js-slide-item:nth-child(1) .dark__image__back  {
+  border-radius: 17px;
+    /* z-index: 1; */
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(270.96deg, rgba(47, 81, 109, 0.8) 0.45%, rgba(88, 120, 146, 0.8) 98.83%);
+    height: 99%;
+  }
 
 
 .js-slide-item:nth-child(1) {
@@ -606,6 +634,7 @@
   /* border-right: 2px solid #FFFFFF; */
   margin-top: -10px;
   cursor: pointer;
+  z-index: 7;
 }
 
 .bottom-slider__button-prev {
@@ -871,9 +900,9 @@
   font-weight: 600;
   text-align: center;
   color: var(--main-color);
-  border-radius: 8px;
-  padding-inline: 8px;
-  padding-block: 2px;
+  border-radius: 16px;
+  padding-inline: 16px;
+  padding-block: 8px;
 }
 
 .price__tomograph {
@@ -900,7 +929,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  border-radius: 9px;
+  border-radius: 6px;
   padding: 13px;
   display: flex;
   flex-direction: column;
@@ -947,7 +976,7 @@
   color: var(--main-color);
   background: #1a3d59b8;
   padding: 10px 20px;
-  border-radius: 25px;
+  border-radius: 18px;
 }
 
 .sale__consultant .title__sale {
@@ -969,6 +998,7 @@
   text-align: center;
   font-size: 24px;
   margin-bottom: 25px;
+  margin-top: 45px;
 }
 
 .sale__installation__implant-korea {
@@ -993,7 +1023,7 @@
   width: 75%;
   font-size: 24px;
   padding: 10px;
-  border-radius: 9px;
+  border-radius: 16px;
 }
 .price__therapy {
   background: linear-gradient(
@@ -1103,6 +1133,7 @@
   text-align: center;
   text-transform: uppercase;
   color: var(--main-color);
+  padding-bottom: 5px;
 }
 
 .subtitle__form {
@@ -1299,3 +1330,4 @@ p {
 .opacity__slide {
   opacity: 0.5;
 }
+

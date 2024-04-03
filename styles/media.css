@@ -425,6 +425,10 @@
   .js-slide-item:nth-child(2) img, .js-slide-item:nth-child(1) img {
     transform: scale(0.8);
   }
+  .js-slide-item:nth-child(2) .dark__image__back, .js-slide-item:nth-child(1) .dark__image__back  {
+    transform: scale(0.8);
+
+    }
   .js-slide-item:nth-child(1) {
     margin-top: 23px;
     margin-right: -529px;
@@ -461,6 +465,8 @@
   }
   .price__implant {
     font-size: 15px;
+    padding-inline: 8px;
+    padding-block: 2px;
   }
   .price__tomograph {
     font-size: 14px;
@@ -492,11 +498,14 @@
   }
   .sale__therapy .title__sale {
     font-size: 14px;
-
+    border-radius: 9px;
   }
   .price__therapy {
     font-size: 15px;
 
+  }
+  .sale__installation__implant .title__sale {
+    margin-top: 0px;
   }
 }
 @media (width < 700px) {
@@ -565,7 +574,7 @@
     margin-inline: 26px;
   }
   .reviews__item  {
-    height: 170px;
+    height: 178px;
     width: 80%;
   }
   .health__slider__card-image {
@@ -587,6 +596,7 @@
     padding: 5px 0px;
     width: 100%;
     margin-inline: 9px;
+    border-radius: 6px;
   }
 
   .services__card_price-text {
@@ -737,5 +747,8 @@ line-height: 17px;
 
 .bottom-slider__button-next {
   right: calc(50% - 50px);
+}
+.price__implant {
+  border-radius: 8px;
 }
 }
