@@ -75,7 +75,18 @@
   gap: 14px;
 }
 
+.social__link__container__footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .social__link-item {
+  width: 43px;
+  height: 43px;
+}
+
+.social__link-item__footer {
   width: 43px;
   height: 43px;
 }
@@ -649,7 +660,7 @@
 
 .doctors__quote {
   font-family: var(--main-font);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 20.7px;
   letter-spacing: 0.1em;
@@ -705,6 +716,29 @@
 .education__text span {
   display: block;
 }
+
+.specification__figcaption, .seminars__figcaption {
+  padding-bottom: 12px;
+}
+
+.seminars__list, .specification__list {
+  padding-left: 26px;
+}
+
+.seminars__item, .specification__item {
+  padding-bottom: 10px;
+}
+
+.seminars__list, .seminars__item {
+  list-style-type: decimal;
+}
+
+.specification__list, .specification__item {
+  list-style-type: disc;
+}
+
+
+
 
 .samples {
   padding-inline: var(--ears);
@@ -778,7 +812,7 @@
   background: linear-gradient(86.43deg, #2f516d 0.31%, #437096 94.77%);
   color: var(--main-color);
   display: flex;
-  border-radius: 20px;
+  border-radius: 9px;
   padding-inline: 20px;
   padding-block-start: 10px;
   padding-block-end: 15px;
@@ -797,7 +831,7 @@
 .samples__subtitle-button {
   background-color: #fff;
   color: #2f516d;
-  padding: 8px 21px;
+  padding: 4px 21px;
   border-radius: 22px;
   font-family: var(--main-font);
   font-size: 15px;
@@ -837,7 +871,7 @@
   );
   font-family: var(--accent-font);
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 600;
   text-align: center;
   color: var(--main-color);
   border-radius: 20px;
@@ -869,7 +903,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  border-radius: 22px;
+  border-radius: 9px;
   padding: 13px;
   display: flex;
   flex-direction: column;
@@ -922,7 +956,7 @@
 .sale__consultant .title__sale {
   font-family: var(--accent-font);
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -962,7 +996,7 @@
   width: 75%;
   font-size: 24px;
   padding: 10px;
-  border-radius: 25px;
+  border-radius: 9px;
 }
 .price__therapy {
   background: linear-gradient(
@@ -972,7 +1006,7 @@
   );
   font-family: var(--accent-font);
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 600;
   text-align: center;
   color: var(--main-color);
   border-top-right-radius: 15px;
@@ -1075,6 +1109,7 @@
 }
 
 .subtitle__form {
+  text-align: center;
   font-family: Arial;
   font-size: 15px;
   font-weight: 400;

@@ -21,64 +21,6 @@ function RecoveryCard(VisualCard) {
   }
 }
 
-function TextContentCards (doctorsQualif) {
-
-  let doctorsEducation = doctorsQualif.querySelector(
-    ".doctors__button__education"
-  );
-
-  console.log(doctorsEducation);
-
-  const doctorsSpecification = doctorsQualif.querySelector(
-    ".doctors__button__specification"
-  );
-  const doctorsEducationText = doctorsQualif.querySelector(".education__text");
-  const doctorsSpecificationText = doctorsQualif.querySelector(
-    ".specification__text"
-  );
-  
-  function doctorsHiddenText() {
-    if (doctorsEducation.value === "1") {
-      doctorsSpecificationText.classList.add("visually-hidden");
-      console.log("first");
-    }
-  
-    if (doctorsEducation.value === "0") {
-      doctorsSpecificationText.classList.remove("visually-hidden");
-      console.log("first");
-    }
-    if (doctorsQualif.value === "1") {
-      doctorsEducationText.classList.add("visually-hidden");
-      console.log("first");
-    }
-  
-    if (doctorsQualif.value === "0") {
-      doctorsEducationText.classList.remove("visually-hidden");
-      console.log("first");
-    }
-  }
-  doctorsHiddenText();
-  
-  doctorsSpecification.addEventListener("click", function (event) {
-    doctorsSpecification.value = "1";
-    doctorsEducation.value = "0";
-    doctorsEducation.classList.add("doctors__button-none");
-    doctorsSpecification.classList.remove("doctors__button-none");
-    doctorsSpecificationText.classList.remove("visually-hidden");
-    doctorsEducationText.classList.add("visually-hidden");
-    doctorsHiddenText();
-  });
-  
-  doctorsEducation.addEventListener("click", function (event) {
-    doctorsEducation.value = "1";
-    doctorsSpecification.value = "0";
-    doctorsSpecification.classList.add("doctors__button-none");
-    doctorsEducation.classList.remove("doctors__button-none");
-    doctorsEducationText.classList.remove("visually-hidden");
-    doctorsSpecificationText.classList.add("visually-hidden");
-    doctorsHiddenText();
-  });
-  }
 
 KillCard(VisualHiddenCard);
 // console.log(VisualHiddenCard);
@@ -100,14 +42,17 @@ ButtonPrev.addEventListener('click', function(){
   parentElement.append(currentElement);
   $(".js-slide-item").animate({ opacity: 0 }, 100);
   $(".js-slide-item").animate({ opacity: 1 }, 1000);
-  // $(".primavera_team-description .primaverateam-caption").html(
-  //   $(".primaverateam-images")
-  //     .find(".primaverateam-item:last-child")
-  //     .find(".primavera_team-caption")
-  //     .html()
-  //     );
-  let VisualTextCard = document.querySelectorAll(`.doctors__card:nth-child(3)`);
-  TextContentCards (VisualTextCard);
+  $(".primavera_team-description .primaverateam-caption").html(
+    $(".primaverateam-images")
+      .find(".primaverateam-item:last-child")
+      .find(".primavera_team-caption")
+      .html()
+      );
+  
+  console.log(VisualTextCard);
+  DoctorsInfo ();
+
+
 })
 
 ButtonNext.addEventListener('click', function(){
@@ -133,6 +78,6 @@ ButtonNext.addEventListener('click', function(){
       .html()
       );
 
-   let VisualTextCard = document.querySelectorAll(`.doctors__card:nth-child(3)`);
-   TextContentCards (VisualTextCard);
+  DoctorsInfo ();
+   
 })

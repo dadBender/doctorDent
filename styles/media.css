@@ -15,6 +15,7 @@
   }
   .samples__subtitle-text {
     font-size: 14px;
+    padding-block-end: 5px;
   }
 }
 @media (width < 1400px) {
@@ -522,6 +523,15 @@
   }
 }
 
+@media (width < 650px) {
+  .reviews__item  {
+    height: 210px;
+  }
+  .swiper-horizontal {
+    padding-inline: 29px;
+  }
+}
+
 @media (width < 566px) {
   .main__slider-image {
     max-width: 220px;
@@ -550,4 +560,133 @@
   .form__input {
     margin-inline: 26px;
   }
+  .reviews__item  {
+    height: 170px;
+    width: 80%;
+  }
+  .health__slider__card-image {
+    width: 260px;
+    height: 296px;
+  }
+  .health__slider {
+    justify-content: center;
+  }
+  .health__slider-container {
+    margin-right: 0px;
+    max-height: 343px;
+  }
+  .services__card-container {
+    grid-template-rows: repeat(3, 266px);
+  }
+  .services__card_price-text {
+    font-size: 12px;
+
+  }
+  .services__card_price-digit {
+    font-size: 14px;
+  }
+  .services__card-price_media {
+    margin-inline: 0px;
+    width: 100%;
+  }
+
+  .doctors__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } 
+
+  .doctors__name {
+    font-size: 20px;
+    max-width: 220px;
+    text-align: center;
+    line-height: 1.5rem;
+    margin-bottom: 13px;
+  }
+  .doctors__post {
+    font-size: 14px;
+    padding-bottom: 30px;
+  }
+  .doctors__deserts {
+    font-size: 14px;
+    text-align: center;
+    max-width: 272px;
+    padding-bottom: 30px;
+  }
+  .doctors__quote {
+    font-size: 14px;
+    padding-bottom: 30px;
+  }
+  .doctors__button {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .doctors__card__text-item {
+    font-size: 14px;
+  }
+  .works__prev-button {
+    padding: 0px;
+    left: calc(50% - 165px);
+  }
+  .works__next-button {
+    padding: 0px;
+    width: 30px;
+    right: calc(50% - 165px);
+  }
+  .sale-item {    
+    padding: 4px;
+  }
+  .title__sale {
+    font-size: 12px;
+  }
+  .price__consultant {
+    padding: 2px 14px;
+    border-radius: 5px;
+    text-align: left;
+  }
+  .sale__consultant {
+    align-items: flex-start;
+    background: linear-gradient(89.68deg, #000000 0.29%, rgba(45, 45, 45, 0.557004) 52.26%, rgba(102, 102, 102, 0) 70.34%), url(../images/consult.webp);
+    background-position: center;
+    background-size: cover;
+  }
+  .sale__installation__implant {
+    padding-top: 30px;
+  }
+  .design__font {
+    font-size: 12px;
+}
+.swiper-slide {
+  margin-right: 0px;
+}
+.swiper-horizontal {
+  padding-inline: 29px;
+}
+.sale__button_prev {
+  transform: translate(-76%, 0%);
+}
+.sale__button_next {
+  transform: translate(75%, -100%);
+}
+.title__form {
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+.subtitle__form {
+  margin-inline: auto;
+  max-width: 330px;
+}
+.contact__list a, p {
+  font-size: 14px;
+}
+.contact__container {
+  padding-bottom: 0px;
+}
+.social__link-item__footer {
+  width: 33px;
+  height: 33px;
+}
+.contact__list {
+  margin-bottom: 25px;
+}
 }

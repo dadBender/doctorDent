@@ -28,7 +28,7 @@
 @font-face {
 	font-family: "NT-somic";
 	src: local("NT-somic"), url("NTSomic-Bold.woff2") format("woff2");
-	font-weight: 700;
+	font-weight: 600;
   }
 
   @font-face {
