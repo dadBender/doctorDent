@@ -507,6 +507,7 @@
   }
   .health__slider-container {
     height: clamp(21.063rem, 15.159vw + 20.746rem, 35.938rem);
+    margin-right: 0px;
   }
   .health-title {
     text-align: center;
@@ -688,5 +689,23 @@
 }
 .contact__list {
   margin-bottom: 25px;
+}
+.health__slider__card-title span {
+font-size: 21px;
+}
+.health__slider__card-title {
+font-size: 15px;
+text-align: center;
+}
+
+.health__prev-button {
+  padding: 0px;
+  left: calc(50% - 140px);
+
+}
+
+.health__next-button {
+  padding: 0px;
+  right: calc(50% - 140px);
 }
 }

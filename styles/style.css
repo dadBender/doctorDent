@@ -253,7 +253,7 @@
 }
 
 .health__slider__card-title span {
-  font-size: clamp(1.313rem, 1.047vw + 1.056rem, 2.313rem);
+  font-size: clamp(1.313rem, 0.9vw + 1.056rem, 2.313rem);
   font-weight: 600;
 }
 
