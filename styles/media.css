@@ -355,7 +355,10 @@
   .services__card_price-digit {
     border: 1px solid var(--main-color);
     border-radius: 7px;
-    padding: 2px;
+    padding: 3px 6px;
+  }
+  .services__card_price-digit span{
+    margin-left: 5px;
   }
   .footer {
     padding: 17px 27px 10px 27px;
@@ -436,7 +439,7 @@
   .sale__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 150px);
+    grid-template-rows: repeat(4, 120px);
     column-gap: 20px;
     row-gap: 6px;
   }
@@ -457,7 +460,7 @@
     font-size: 14px;
   }
   .price__implant {
-    font-size: 14px;
+    font-size: 15px;
   }
   .price__tomograph {
     font-size: 14px;
@@ -481,7 +484,7 @@
   }
   .sale__installation__implant .title__sale {
     font-size: 14px;
-
+    line-height: 16px;
   }
   .sale__installation__implant-korea {
     font-size: 14px;
@@ -492,7 +495,7 @@
 
   }
   .price__therapy {
-    font-size: 14px;
+    font-size: 15px;
 
   }
 }
@@ -577,10 +580,17 @@
     max-height: 343px;
   }
   .services__card-container {
-    grid-template-rows: repeat(3, 266px);
+    grid-template-rows: repeat(3, 250px);
   }
+  .services__card-text {
+    font-size: 13px;
+    padding: 5px 0px;
+    width: 100%;
+    margin-inline: 9px;
+  }
+
   .services__card_price-text {
-    font-size: 12px;
+    font-size: 11px;
 
   }
   .services__card_price-digit {
@@ -625,15 +635,8 @@
   .doctors__card__text-item {
     font-size: 14px;
   }
-  .works__prev-button {
-    padding: 0px;
-    left: calc(50% - 165px);
-  }
-  .works__next-button {
-    padding: 0px;
-    width: 30px;
-    right: calc(50% - 165px);
-  }
+ 
+ 
   .sale-item {    
     padding: 4px;
   }
@@ -652,7 +655,10 @@
     background-size: cover;
   }
   .sale__installation__implant {
-    padding-top: 30px;
+    padding-top: 15px;
+  }
+  .sale__installation__implant .title__sale {
+    margin-bottom: 12px;
   }
   .design__font {
     font-size: 12px;
@@ -691,11 +697,12 @@
   margin-bottom: 25px;
 }
 .health__slider__card-title span {
-font-size: 21px;
+font-size: 20px;
 }
 .health__slider__card-title {
 font-size: 15px;
 text-align: center;
+line-height: 17px;
 }
 
 .health__prev-button {
@@ -707,5 +714,28 @@ text-align: center;
 .health__next-button {
   padding: 0px;
   right: calc(50% - 140px);
+}
+.doctors__content {
+  gap: 0px;
+}
+.price__therapy {
+  padding-inline: 8px;
+    padding-block: 3px;
+}
+.works__prev-button {
+  padding: 0px;
+  left: calc(50% - 165px);
+}
+.works__next-button {
+  padding: 0px;
+  width: 30px;
+  right: calc(50% - 165px);
+}
+.bottom-slider__button-prev {
+  left: calc(50% - 50px);
+}
+
+.bottom-slider__button-next {
+  right: calc(50% - 50px);
 }
 }

@@ -233,8 +233,8 @@
     rgba(236, 0, 0, 0.8) 0%,
     rgba(179, 0, 0, 0.8) 100%
   );
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
   right: 0px;
   bottom: 100px;
   padding: 8px 15px;
@@ -319,7 +319,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 22px;
+  border-radius: 8px;
   display: flex;
 }
 
@@ -333,7 +333,7 @@
   width: 72%;
   padding: 16px 0px;
   background: linear-gradient(180deg, #2f516d 0%, #1a3d59 100%);
-  border-radius: 20px;
+  border-radius: 6px;
   margin: 0 auto;
   color: var(--main-color);
   margin-bottom: clamp(0.563rem, 0.393vw + 0.466rem, 0.938rem);
@@ -367,6 +367,10 @@
   display: grid;
   grid-template-columns: 6fr 2fr;
   padding: 19px 10px;
+  background: linear-gradient(180deg, #2f516d 0%, #1a3d59 100%);
+  border-radius: 8px;
+  margin: 0 auto;
+  color: var(--main-color);
 }
 
 .services__card_price-text {
@@ -393,13 +397,6 @@
   font-weight: 400;
   text-align: left;
   font-family: var(--main-font);
-  color: var(--main-color);
-}
-
-.services__card-price {
-  background: linear-gradient(180deg, #2f516d 0%, #1a3d59 100%);
-  border-radius: 20px;
-  margin: 0 auto;
   color: var(--main-color);
 }
 
@@ -874,9 +871,9 @@
   font-weight: 600;
   text-align: center;
   color: var(--main-color);
-  border-radius: 20px;
-  padding-inline: 16px;
-  padding-block: 8px;
+  border-radius: 8px;
+  padding-inline: 8px;
+  padding-block: 2px;
 }
 
 .price__tomograph {
