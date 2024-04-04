@@ -482,6 +482,7 @@
   .sale__consultant .title__sale {
     font-size: 14px;
     text-align: left;
+    line-height: 15px;
 
   }
   .price__consultant {
@@ -499,6 +500,7 @@
   .sale__therapy .title__sale {
     font-size: 14px;
     border-radius: 9px;
+    line-height: 15px;
   }
   .price__therapy {
     font-size: 15px;
@@ -506,6 +508,20 @@
   }
   .sale__installation__implant .title__sale {
     margin-top: 0px;
+  }
+  .health__slider__card-title {
+    font-size: 18px;
+  }
+  .health__slider__card-title span {
+    font-size: 24px;
+  }
+}
+@media (width < 750px) {
+  .health__slider__card-title {
+    font-size: 16px;
+  }
+  .health__slider__card-title span {
+    font-size: 22px;
   }
 }
 @media (width < 700px) {
@@ -542,6 +558,9 @@
   }
   .swiper-horizontal {
     padding-inline: 29px;
+  }
+  .reviews__container {
+    height: 207px;
   }
 }
 
@@ -707,10 +726,10 @@
   margin-bottom: 25px;
 }
 .health__slider__card-title span {
-font-size: 20px;
+font-size: 19px;
 }
 .health__slider__card-title {
-font-size: 15px;
+font-size: 14px;
 text-align: center;
 line-height: 17px;
 }
@@ -751,4 +770,5 @@ line-height: 17px;
 .price__implant {
   border-radius: 8px;
 }
+
 }

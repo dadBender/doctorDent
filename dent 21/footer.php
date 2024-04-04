@@ -1,6 +1,5 @@
 
 
-
 <footer class="footer">
       <nav class="navigation navigation__header navigation__footer">
         <input
@@ -66,5 +65,3 @@
     <script src="<?php echo get_template_directory_uri(); ?>/assets/scripts/break_window.js"></script>
   </body>
 </html>
-
-
