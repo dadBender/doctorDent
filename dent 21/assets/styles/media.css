@@ -1,0 +1,754 @@
+@media (width < 1800px) {
+  :root {
+    --width-samples-card: 380px;
+  --height-samples-card: 316px;
+  }
+}
+@media (width < 1600px) {
+  :root {
+    --width-samples-card: 314px;
+  --height-samples-card: 261px;
+  }
+  .samples__subtitle {
+    height: 100px;
+    flex-direction: column;
+  }
+  .samples__subtitle-text {
+    font-size: 14px;
+    padding-block-end: 5px;
+  }
+}
+@media (width < 1400px) {
+  
+  .reviews__text {
+    padding-block: 0px 8px;
+  }
+}
+@media (width < 1300px) {
+  :root {
+    --width-samples-card: 261px;
+  --height-samples-card: 218px;
+  }
+}
+@media (width < 1218px) {
+  .sale__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 200px);
+    column-gap: 20px;
+    row-gap: 6px;
+  }
+  .price__therapy {
+    bottom: 35px;
+  }
+  .sale__installation__implant {
+    grid-column: 2/3;
+    grid-row: 1/4;
+  }
+
+  .sale__therapy {
+    grid-row: 4/5;
+    grid-column: 1/3;
+  }
+}
+
+@media (width < 1160px) {
+  .telephone__header p {
+    display: none;
+  }
+  .contact {
+    flex-direction: column;
+    padding: 0px;
+  }
+  .contact__container {
+    padding-inline: var(--ears);    
+  }
+  .contact__list {
+    max-width: none;
+    width: 100%;
+  }
+  .geo__link::before {
+    width: 28px;
+  }
+  .cards__contacts {
+    height: 290px;
+  }
+}
+
+/* burger menu */
+
+@media (width < 1100px) {
+  .header {
+    margin-top: 35px;
+  }
+  .contact__item-location {
+    display: none !important;
+  }
+  .social__link__container {
+    display: none !important;
+  }
+
+  .burger-checkbox {
+    position: absolute;
+    visibility: hidden;
+    display: none;
+  }
+
+  .burger {
+    cursor: pointer;
+    /* display: none; */
+    position: absolute;
+    border: none;
+    background: transparent;
+    top: 53px;
+    width: 40px;
+    height: 26px;
+    z-index: 10;
+    transform: scale(0.7);
+  }
+
+  .burger::before,
+  .burger::after {
+    content: "";
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    background: var(--accent-color);
+  }
+
+  .burger::before {
+    top: 0;
+    box-shadow: 0 11px 0 var(--accent-color);
+    transition: box-shadow 0.3s 0.15s, top 0.3s 0.15s, transform 0.3s;
+  }
+
+  .burger::after {
+    bottom: 0;
+    transition: bottom 0.3s 0.15s, transform 0.3s;
+  }
+
+  .burger-checkbox:checked + .burger::before {
+    content: "";
+    top: 22px;
+    transform: rotate(45deg);
+    box-shadow: 0 6px 0 transparent;
+    transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
+    bottom: 11px;
+    background: var(--main-color);
+    z-index: 3;
+  }
+
+  .burger-checkbox:checked + .burger::after {
+
+    transform: rotate(-45deg);
+    transition: bottom 0.3s, transform 0.3s 0.15s;
+    background: var(--main-color);
+  }
+
+  .samples__container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .works__prev-button, .works__next-button {
+    display: flex;
+    position: absolute;
+    top: 50%;
+  }
+  .works__prev-button {
+    left: clamp(0rem, 51.271vw - 12.561rem, 22.688rem);
+  }
+  .works__next-button {
+    right: clamp(0rem, 51.271vw - 12.561rem, 22.688rem);
+  }
+
+  .doctors__content {
+    display: flex;
+    flex-direction: column;
+  }
+  .bottom-slider__button-next {
+    right: 41%;
+  }
+  .bottom-slider__button-prev {
+    left: 46%;
+  }
+  .burger-checkbox__footer {
+    position: absolute;
+    visibility: hidden;
+    display: none;
+  }
+
+  .burger__footer {
+    cursor: pointer;
+    /* display: none; */
+    position: relative;
+    border: none;
+    background: transparent;
+    width: 40px;
+    height: 26px;
+    z-index: 10;
+    transform: scale(0.7);
+  }
+
+  .burger__footer::before,
+  .burger__footer::after {
+    content: "";
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    background: var(--main-color);
+  }
+
+  .burger__footer::before {
+    top: 0;
+    box-shadow: 0 11px 0 var(--main-color);
+    transition: box-shadow 0.3s 0.15s, top 0.3s 0.15s, transform 0.3s;
+  }
+
+  .burger__footer::after {
+    bottom: 0;
+    transition: bottom 0.3s 0.15s, transform 0.3s;
+  }
+
+  .burger-checkbox__footer:checked + .burger__footer::before {
+    content: "";
+    top: 22px;
+    transform: rotate(45deg);
+    box-shadow: 0 6px 0 transparent;
+    transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
+    bottom: 11px;
+    background: var(--main-color);
+    z-index: 3;
+  }
+
+  .burger-checkbox__footer:checked + .burger__footer::after {
+
+    transform: rotate(-45deg);
+    transition: bottom 0.3s, transform 0.3s 0.15s;
+    background: var(--main-color);
+  }
+
+
+
+
+  .menu-list {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3px;
+    padding: 80px 0;
+    margin: 0;
+    background: var(--accent-color);
+    color: var(--main-color);
+    list-style-type: none;
+    transform: translateX(-100%);
+    transition: 0.3s;
+    width: 100%;
+  }
+
+  .menu-item {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .menu-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .burger-checkbox:checked ~ .menu-list {
+    transform: translateX(0);
+  }
+
+  .burger-checkbox {
+    display: inline-block;
+  }
+
+  .burger {
+    display: block;
+  }
+
+
+  .menu-list__footer {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3px;
+    padding: 80px 0;
+    margin: 0;
+    background: var(--accent-color);
+    color: var(--main-color);
+    list-style-type: none;
+    transform: translateY(-100%);
+    display: none;
+    transition: 0.3s;
+    width: 100%;
+  }
+
+  .menu-item__footer {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .menu-item__footer:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .burger-checkbox__footer:checked ~ .menu-list__footer {
+    display: block;
+    transform: translateY(0);
+  }
+
+  .burger-checkbox__footer {
+    display: inline-block;
+  }
+
+  .burger__footer {
+    display: block;
+  }
+
+  .contact__header {
+    display: flex;
+    justify-content: end;
+    gap: clamp(3.75rem, 37.467vw - 4.446rem, 21.313rem);
+  }
+  .telephone__header-logo {
+    margin-right: 0px;
+  }
+
+  .health__container {
+    align-items: center;
+    padding-right: 0px;
+  }
+
+  .health__container {
+    flex-direction: column-reverse;
+    padding-top: clamp(1.25rem, 1.571vw + 0.865rem, 2.75rem);
+  }
+  .services__card__back {
+    padding: 0px;
+  }
+  .services__card-price_media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .services__card_price-text {
+    text-align: center;
+  }
+  .services__card_price-digit {
+    border: 1px solid var(--main-color);
+    border-radius: 7px;
+    padding: 3px 6px;
+  }
+  .services__card_price-digit span{
+    margin-left: 5px;
+  }
+  .footer {
+    padding: 17px 27px 10px 27px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "burger__footer logo__dent call__footer";
+    height: 150px;
+  }
+  .navigation__footer {
+    grid-area: burger__footer;
+    align-self: center;
+  }
+  .logo__dent__footer {
+    grid-area: logo__dent;
+  }
+  .call__footer {
+    grid-area: call__footer;
+    display: block;
+    justify-self: end;
+  }
+  .footer__logo {
+    gap: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 1/4;
+    transform: translateY(
+      -36%
+    );
+  }
+  .rus__text {
+    font-size: 12px;
+  }
+
+  .logo__dent__footer-icon {
+    width: 46px;
+  }
+
+  .logo__rus__footer-image {
+    width: 47px;
+    height: 20px;
+  }
+ 
+}
+@media (width < 950px) {
+  .bottom-slider__wrapper {
+    justify-content: center;
+    padding-left: 155px;
+  }
+  .main__slider-image {
+    max-width: 300px;
+  }
+  .bottom-slider__button-prev, .bottom-slider__button-next {
+    top: 386px;
+
+  }
+  .bottom-slider__button-next {
+    right: clamp(6.875rem, 32.079vw - 0.984rem, 18.063rem);
+  }
+  .bottom-slider__button-prev {
+    left:clamp(5.75rem, 35.305vw - 2.9rem, 18.063rem);
+  }
+  .js-slide-item:nth-child(2) img, .js-slide-item:nth-child(1) img {
+    transform: scale(0.8);
+  }
+  .js-slide-item:nth-child(2) .dark__image__back, .js-slide-item:nth-child(1) .dark__image__back  {
+    transform: scale(0.8);
+
+    }
+  .js-slide-item:nth-child(1) {
+    margin-top: 23px;
+    margin-right: -529px;
+  }
+  .js-slide-item:nth-child(2) {
+    margin-top: 23px;
+    margin-right: -183px;
+  }
+}
+
+@media (width < 900px) {
+  .sale__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 120px);
+    column-gap: 20px;
+    row-gap: 6px;
+  }
+  .sale__therapy .title__sale {
+    width: 100%;
+  }
+  .price__therapy {
+    bottom: 15px;
+  }
+  .title__sale {
+    font-size: 14px;
+  }
+
+  .price__tomograph {
+    font-size: 14px;
+  }
+  .sale__therapy .title__sale {
+    font-size: 14px;
+  }
+  .price__implant {
+    font-size: 15px;
+    padding-inline: 8px;
+    padding-block: 2px;
+  }
+  .price__tomograph {
+    font-size: 14px;
+  }
+  .sale__valute {
+    font-size: 14px;
+
+  }
+  .design__font {
+    font-size: 14px;
+
+  }
+  .sale__consultant .title__sale {
+    font-size: 14px;
+    text-align: left;
+
+  }
+  .price__consultant {
+    font-size: 14px;
+
+  }
+  .sale__installation__implant .title__sale {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .sale__installation__implant-korea {
+    font-size: 14px;
+
+  }
+  .sale__therapy .title__sale {
+    font-size: 14px;
+    border-radius: 9px;
+  }
+  .price__therapy {
+    font-size: 15px;
+
+  }
+  .sale__installation__implant .title__sale {
+    margin-top: 0px;
+  }
+}
+@media (width < 700px) {
+  .health__slider__card-doptext {
+    display: none;
+  }
+  .health__container {
+    background-image: url(../images/header_bg_mobile.webp);
+    min-height: 100vh;
+    justify-content: start;
+  }
+  .health__slider-container {
+    height: clamp(21.063rem, 15.159vw + 20.746rem, 35.938rem);
+    margin-right: 0px;
+  }
+  .health-title {
+    text-align: center;
+  }
+  .services__card-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows:
+      clamp(16.625rem, 5.955vw + 15.166rem, 22.313rem) clamp(
+        16.625rem,
+        5.955vw + 15.166rem,
+        22.313rem
+      )
+      clamp(16.625rem, 5.955vw + 15.166rem, 22.313rem);
+  }
+}
+
+@media (width < 650px) {
+  .reviews__item  {
+    height: 210px;
+  }
+  .swiper-horizontal {
+    padding-inline: 29px;
+  }
+}
+
+@media (width < 566px) {
+  .main__slider-image {
+    max-width: 220px;
+}
+.js-slide-item:nth-child(1) {
+  margin-top: 11px;
+  margin-right: -350px;
+}
+.js-slide-item:nth-child(2) {
+  margin-top: 11px;
+  margin-right: -153px;
+}
+.bottom-slider__wrapper {
+  padding-left: 58px;
+}
+.bottom-slider__button-prev, .bottom-slider__button-next {
+  top: 273px;
+}
+}
+@media (width < 500px) {
+  .reviews__text {
+    padding: 0px;
+    font-size: 15px;
+  }
+
+  .form__input {
+    margin-inline: 26px;
+  }
+  .reviews__item  {
+    height: 178px;
+    width: 80%;
+  }
+  .health__slider__card-image {
+    width: 260px;
+    height: 296px;
+  }
+  .health__slider {
+    justify-content: center;
+  }
+  .health__slider-container {
+    margin-right: 0px;
+    max-height: 343px;
+  }
+  .services__card-container {
+    grid-template-rows: repeat(3, 250px);
+  }
+  .services__card-text {
+    font-size: 13px;
+    padding: 5px 0px;
+    width: 100%;
+    margin-inline: 9px;
+    border-radius: 6px;
+  }
+
+  .services__card_price-text {
+    font-size: 11px;
+
+  }
+  .services__card_price-digit {
+    font-size: 14px;
+  }
+  .services__card-price_media {
+    margin-inline: 0px;
+    width: 100%;
+  }
+
+  .doctors__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } 
+
+  .doctors__name {
+    font-size: 20px;
+    max-width: 220px;
+    text-align: center;
+    line-height: 1.5rem;
+    margin-bottom: 13px;
+  }
+  .doctors__post {
+    font-size: 14px;
+    padding-bottom: 30px;
+  }
+  .doctors__deserts {
+    font-size: 14px;
+    text-align: center;
+    max-width: 272px;
+    padding-bottom: 30px;
+  }
+  .doctors__quote {
+    font-size: 14px;
+    padding-bottom: 30px;
+  }
+  .doctors__button {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .doctors__card__text-item {
+    font-size: 14px;
+  }
+ 
+ 
+  .sale-item {    
+    padding: 4px;
+  }
+  .title__sale {
+    font-size: 12px;
+  }
+  .price__consultant {
+    padding: 2px 14px;
+    border-radius: 5px;
+    text-align: left;
+  }
+  .sale__consultant {
+    align-items: flex-start;
+    background: linear-gradient(89.68deg, #000000 0.29%, rgba(45, 45, 45, 0.557004) 52.26%, rgba(102, 102, 102, 0) 70.34%), url(../images/consult.webp);
+    background-position: center;
+    background-size: cover;
+  }
+  .sale__installation__implant {
+    padding-top: 15px;
+  }
+  .sale__installation__implant .title__sale {
+    margin-bottom: 12px;
+  }
+  .design__font {
+    font-size: 12px;
+}
+.swiper-slide {
+  margin-right: 0px;
+}
+.swiper-horizontal {
+  padding-inline: 29px;
+}
+.sale__button_prev {
+  transform: translate(-76%, 0%);
+}
+.sale__button_next {
+  transform: translate(75%, -100%);
+}
+.title__form {
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+.subtitle__form {
+  margin-inline: auto;
+  max-width: 330px;
+}
+.contact__list a, p {
+  font-size: 14px;
+}
+.contact__container {
+  padding-bottom: 0px;
+}
+.social__link-item__footer {
+  width: 33px;
+  height: 33px;
+}
+.contact__list {
+  margin-bottom: 25px;
+}
+.health__slider__card-title span {
+font-size: 20px;
+}
+.health__slider__card-title {
+font-size: 15px;
+text-align: center;
+line-height: 17px;
+}
+
+.health__prev-button {
+  padding: 0px;
+  left: calc(50% - 140px);
+
+}
+
+.health__next-button {
+  padding: 0px;
+  right: calc(50% - 140px);
+}
+.doctors__content {
+  gap: 0px;
+}
+.price__therapy {
+  padding-inline: 8px;
+    padding-block: 3px;
+}
+.works__prev-button {
+  padding: 0px;
+  left: calc(50% - 165px);
+}
+.works__next-button {
+  padding: 0px;
+  width: 30px;
+  right: calc(50% - 165px);
+}
+.bottom-slider__button-prev {
+  left: calc(50% - 50px);
+}
+
+.bottom-slider__button-next {
+  right: calc(50% - 50px);
+}
+.price__implant {
+  border-radius: 8px;
+}
+}

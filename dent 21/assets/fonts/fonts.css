@@ -1,0 +1,39 @@
+
+@font-face {
+	font-family: "Arial";
+	src: local("Arial"), url("ArialMT.woff2") format("woff2");
+	font-weight: 400;
+  }
+@font-face {
+	font-family: "Arial-bold";
+	src: local("Arial"), url("Arial-BoldMT.woff2") format("woff2");
+	font-weight: 700;
+  }
+@font-face {
+	font-family: "Arial-Narrow";
+	src: local("Arial-Narrow"), url("ArialNarrow.woff2") format("woff2");
+	font-weight: 400;
+  }
+
+@font-face {
+	font-family: "NT-somic";
+	src: local("NT-somic"), url("NTSomic-Regular.woff2") format("woff2");
+	font-weight: 400;
+  }
+@font-face {
+	font-family: "NT-somic";
+	src: local("NT-somic"), url("NTSomic-Regular.woff2") format("woff2");
+	font-weight: medium;
+  }
+@font-face {
+	font-family: "NT-somic";
+	src: local("NT-somic"), url("NTSomic-Bold.woff2") format("woff2");
+	font-weight: 600;
+  }
+
+  @font-face {
+	font-family: "ITC-Franklin-GothicBook";
+	src: local("ITC-Franklin-GothicBook"), url("ITCFranklinGothicStd-Book.woff2") format("woff2");
+	font-weight: 400;
+  }
+  

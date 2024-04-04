@@ -45,30 +45,22 @@ function BreakWindow() {
   
   // Инициализация слайдера
   updateSlider();
-//   if (window.matchMedia("(max-width: 1100px)").matches) {
-//     BreakWindow();
-//     console.log("bugaga");
-//   }
+  if (window.matchMedia("(max-width: 1100px)").matches) {
+    BreakWindow();
+    console.log("bugaga");
+  }
   
-// const mobileWidthMediaQuery = window.matchMedia('(max-width: 1100px)')
+const mobileWidthMediaQuery = window.matchMedia('(max-width: 1100px)')
 
-// function printLog(isMobileSize) {
-//   const size = isMobileSize ? 'уже или равен' : 'шире'
+function printLog(isMobileSize) {
+  const size = isMobileSize ? 'уже или равен' : 'шире'
 
-//   console.log(`Размер экрана ${size} 1100px`)
-// }
-
-// printLog(mobileWidthMediaQuery.matches)
-
-// mobileWidthMediaQuery.addEventListener('change', function (event) {
-//   printLog(event.matches);
-//   BreakWindow();
-//   console.log( window.innerWidth );
-
-// })
-
-// console.log(window.innerWidth);
-
-if ( window.innerWidth < 1100 ) {
-  BreakWindow();
+  console.log(`Размер экрана ${size} 1100px`)
 }
+
+printLog(mobileWidthMediaQuery.matches)
+
+mobileWidthMediaQuery.addEventListener('change', function (event) {
+  printLog(event.matches);
+  BreakWindow();
+})

@@ -1,3 +1,4 @@
+
 function DoctorsInfo () {
 let Doctors = document.querySelectorAll('.doctors__card');
 let ShownDoctor;
