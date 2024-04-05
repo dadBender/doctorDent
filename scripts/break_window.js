@@ -16,8 +16,7 @@ function BreakWindow() {
     // Функция для показа предыдущего слайда
     function SampleshowPreviousSlide() {
       console.log("prev");
-      SamplesSlideIndex =
-        (SamplesSlideIndex - 1 + SamplesSlideCount) % SamplesSlideCount;
+      SamplesSlideIndex = (SamplesSlideIndex - 1 + SamplesSlideCount) % SamplesSlideCount;
       SampleupdateSlider();
     }
   
@@ -69,6 +68,7 @@ function BreakWindow() {
 
 // console.log(window.innerWidth);
 
-if ( window.innerWidth < 1100 ) {
-  BreakWindow();
-}
+// if ( window.innerWidth < 1100 ) {
+//   BreakWindow();
+// }
+BreakWindow();

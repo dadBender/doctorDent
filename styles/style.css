@@ -766,12 +766,20 @@ z-index: 0;
 
 
 
-.samples {
+.samples, .samples__desk {
   padding-inline: var(--ears);
   position: relative;
 }
 
-.samples__container {
+.samples__desk {
+  display: block;
+}
+
+.samples {
+  display: none;
+}
+
+.samples__container, .samples__container__desk {
   display: grid;
   grid-template-columns: repeat(3, var(--width-samples-card));
   justify-content: center;
