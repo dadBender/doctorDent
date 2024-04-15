@@ -608,7 +608,8 @@
 
 @media (width < 566px) {
   .reviews__container {
-    height: 466px;}
+    height: 466px;
+  }
   .main__slider-image {
     max-width: 220px;
 }
@@ -743,10 +744,10 @@
   padding-inline: 29px;
 }
 .sale__button_prev {
-  transform: translate(-76%, 0%);
+  transform: translate(-76%, 70%);
 }
 .sale__button_next {
-  transform: translate(75%, -100%);
+  transform: translate(75%, -30%);
 }
 .title__form {
   font-size: 25px;
