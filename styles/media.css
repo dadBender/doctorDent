@@ -1,16 +1,20 @@
 @media (width < 1800px) {
   :root {
-    --width-samples-card: 380px;
-  --height-samples-card: 316px;
+    --width-samples-card: 277px;
+    --height-samples-card: 231px;
+  }
+  .samples__subtitle {
+    height: 120px;
+    flex-direction: column;
   }
 }
 @media (width < 1600px) {
   :root {
-    --width-samples-card: 314px;
-  --height-samples-card: 261px;
+    --width-samples-card: 220px;
+    --height-samples-card: 195px;
   }
   .samples__subtitle {
-    height: 100px;
+    height: 120px;
     flex-direction: column;
   }
   .samples__subtitle-text {
@@ -26,8 +30,11 @@
 }
 @media (width < 1300px) {
   :root {
-    --width-samples-card: 261px;
-  --height-samples-card: 218px;
+    --width-samples-card: 185px;
+    --height-samples-card: 155px;
+  }
+  .samples__subtitle {
+    height: 150px;
   }
 }
 @media (width < 1218px) {
@@ -78,8 +85,15 @@
 /* burger menu */
 
 @media (width < 1100px) {
+  :root {
+    --width-samples-card: 266px;
+    --height-samples-card: 226px;
+  }
   .samples__desk {
     display: none;
+  }
+  .samples__subtitle {
+    height: 108px;
   }
   
   .samples {
@@ -409,6 +423,9 @@
     width: 47px;
     height: 20px;
   }
+  .reviews__container {
+    height: 370px;
+}
  
 }
 @media (width < 950px) {
@@ -444,6 +461,9 @@
     margin-top: 23px;
     margin-right: -183px;
   }
+  .reviews__container {
+    height: 411px;
+}
 }
 
 @media (width < 900px) {
@@ -522,6 +542,9 @@
   .health__slider__card-title span {
     font-size: 24px;
   }
+  .reviews__container {
+    height: 440px;
+}
 }
 @media (width < 750px) {
   .health__slider__card-title {
@@ -530,6 +553,9 @@
   .health__slider__card-title span {
     font-size: 22px;
   }
+  .reviews__container {
+    height: 472px;
+}
 }
 @media (width < 700px) {
   .health__slider__card-doptext {
@@ -557,21 +583,32 @@
       )
       clamp(16.625rem, 5.955vw + 15.166rem, 22.313rem);
   }
+  .reviews__container {
+    height: 540px;
+}
 }
 
 @media (width < 650px) {
   .reviews__item  {
-    height: 210px;
+    /* height: 210px; */
   }
   .swiper-horizontal {
     padding-inline: 29px;
   }
   .reviews__container {
-    height: 207px;
+    height: 600px;
   }
 }
 
+@media (width < 600px) {
+.reviews__container {
+  height: 430px;
+}
+}
+
 @media (width < 566px) {
+  .reviews__container {
+    height: 466px;}
   .main__slider-image {
     max-width: 220px;
 }
@@ -600,7 +637,7 @@
     margin-inline: 26px;
   }
   .reviews__item  {
-    height: 178px;
+    /* height: 178px; */
     width: 80%;
   }
   .health__slider__card-image {
@@ -777,5 +814,16 @@ line-height: 17px;
 .price__implant {
   border-radius: 8px;
 }
+.health__slider__card-text {
+  padding: 4px 6px 4px 0px;
+}
+.health__slider__card-price {
+  padding-bottom: 13px;
+}
+/* 
+.office__image, .office__item {
+  max-height: 115px;
+  max-width: 179px;
+} */
 
 }

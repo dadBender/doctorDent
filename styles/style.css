@@ -9,8 +9,8 @@
   --bg-doctors: #f3f3f3;
   --doctor-desrts-color: #2f516d;
   --none-active-button: #2f516d8a;
-  --width-samples-card: 460px;
-  --height-samples-card: 383px;
+  --width-samples-card: 311px;
+  --height-samples-card: 257px;
 }
 
 .page {
@@ -223,7 +223,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 12px;
+  gap: 10px;
   bottom: 17px;
   right: 0px;
 }
@@ -233,12 +233,12 @@
     rgba(236, 0, 0, 0.8) 0%,
     rgba(179, 0, 0, 0.8) 100%
   );
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
   right: 0px;
   bottom: 100px;
-  padding: 8px 15px;
-  width: clamp(10.438rem, 8.508vw + 8.353rem, 18.563rem);
+  padding: 8px 11px;
+  width: clamp(12rem, 9.6151rem + 9.5395vw, 21.0625rem);
   text-align: end;
 }
 
@@ -259,11 +259,12 @@
 
 .health__slider__card-subtitle {
   font-family: var(--accent-font);
-  font-size: clamp(0.563rem, 0.524vw + 0.434rem, 1.063rem);
-  font-weight: 400;
+  font-size: clamp(0.76rem, 0.6rem + 0.525vw, 1.34rem);
+  font-weight: 600;
   text-align: center;
   text-transform: uppercase;
   color: var(--main-color);
+  text-align: right;
 }
 
 .health__slider__card-price {
@@ -274,6 +275,7 @@
   font-weight: 700;
   text-align: end;
   padding-right: 16px;
+  padding-bottom: 24px;
 }
 
 .health__slider__card-price span {
@@ -406,7 +408,7 @@
 }
 
 .services__card-price-implant {
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .services__card-child-front,
@@ -422,7 +424,7 @@
   background-image: url(../images/ortondont.webp);
 }
 .services__card-price-ortondont {
-  grid-template-rows: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .services__card-protez-front,
@@ -781,7 +783,7 @@ z-index: 0;
 
 .samples__container, .samples__container__desk {
   display: grid;
-  grid-template-columns: repeat(3, var(--width-samples-card));
+  grid-template-columns: repeat(4, var(--width-samples-card));
   justify-content: center;
   gap: 30px;
 }
@@ -796,6 +798,7 @@ z-index: 0;
   width: var(
     --width-samples-card
   ); /*должен быть такой же высоты, как и изображения*/
+  
 }
 
 .samples__image {
@@ -803,6 +806,7 @@ z-index: 0;
   width: var(--width-samples-card);
   height: var(--height-samples-card);
   overflow: hidden;
+  border-radius: 9px;
 }
 
 .samples__image img {
@@ -853,7 +857,7 @@ z-index: 0;
   margin-top: 8px;
   justify-content: space-between;
   align-items: center;
-  height: 77px;
+  height: 137px;
 }
 
 .samples__subtitle-text {
@@ -1063,7 +1067,7 @@ z-index: 0;
 }
 
 .reviews__container {
-  height: 192px;
+  height: 330px;
 }
 
 .reviews__item {
@@ -1093,7 +1097,7 @@ z-index: 0;
 }
 .reviews__text {
   text-align: left;
-  padding-block: 20px 24px;
+  padding-block: 20px 0px;
 }
 
 
@@ -1339,3 +1343,20 @@ p {
   opacity: 0.5;
 }
 
+.office__item, .office {
+  height: clamp(7.188rem, 13.158vw + 3.898rem, 19.688rem);
+  
+}
+
+.office__image {
+  width: 100%;
+  height: 100%;
+}
+
+.office {
+  height: calc(30px + clamp(7.188rem, 13.158vw + 3.898rem, 19.688rem));
+
+  width: 100%;
+  overflow: hidden;
+  padding-block: 15px;
+}
